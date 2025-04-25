@@ -1,0 +1,105 @@
+---
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faTiktok, faYoutube, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
+const xiaohongshuIcon = "/images/red.png";
+const wearIcon = "/images/wear.png";
+---
+
+<div class="social-icons">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/pacific_kai.12" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faInstagram} size="2x" />
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@pacific_kai.12" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faTiktok} size="2x" />
+  </a>
+
+  <!-- YouTube -->
+  <a href="https://youtube.com/@pacifickai_world?si=Z_EEfs5i6lvKz3qa" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faYoutube} size="2x" />
+  </a>
+
+  <!-- 小紅書 (Red) -->
+  <a href="https://www.xiaohongshu.com/user/profile/your_username" target="_blank" rel="noopener noreferrer">
+    <img src={xiaohongshuIcon} alt="Xiaohongshu" class="custom-icon" />
+  </a>
+
+    <!-- WEAR -->
+    <a href="https://wear.jp/itskai12" target="_blank" rel="noopener noreferrer">
+        <img src={wearIcon} alt="WEAR" class="custom-icon wear-icon" />
+      </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/kaipora12" target="_blank" rel="noopener noreferrer">
+        <FontAwesomeIcon icon={faGithub} size="2x" className="icon" />
+      </a>
+
+          <!-- LinkedIn (追加) -->
+  <a href="https://www.linkedin.com/in/kai-nakamura-8a636a238/" target="_blank" rel="noopener noreferrer">
+    <FontAwesomeIcon icon={faLinkedin} size="2x" className="icon" />
+  </a>
+
+    <!-- spotify -->
+  <p><a href="">COMING SOON</a></p>
+</div>
+
+<style>
+  .social-icons {
+    display: flex;
+    gap: 30px; /* アイコンの間隔 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icons a {
+    color: white;
+    transition: transform 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.1); /* ホバー時に拡大 */
+  }
+
+  .custom-icon {
+    width: 40px; /* 小紅書のアイコンサイズ */
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .custom-icon:hover {
+    transform: scale(1.1);
+  }
+    .wear-icon {
+    width: 50px; /* WEARのアイコンサイズ */
+    height: auto;
+  }
+
+  p {
+    font-family: 'Oswald', sans-serif;
+  }
+  @media screen and (max-width: 480px) {
+  .social-icons {
+    gap: 15px; /* アイコン間隔を狭くする */
+  }
+
+  .social-icons a svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .custom-icon {
+    width: 30px;
+  }
+
+  .wear-icon {
+    width: 35px;
+  }
+  .social-icons a:hover {
+    transform: scale(1.1); /* ホバー時に拡大 */
+  }
+  
+}
+</style>

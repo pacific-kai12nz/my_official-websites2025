@@ -1,0 +1,190 @@
+<header>
+    <div class="header-left">
+        <h1><a href="/" class="top-link">KAI NAKAMURA</a></h1>
+    </div>
+  
+    <div id="header-right">
+        <ul class="nav">
+            <li><a href="/menu">MENU</a></li>
+            <li><a href="/biography">BIOGRAPHY</a></li>
+            <li><a href="/works">WORKS</a></li>
+            <li><a href="/contact">CONTACT</a></li>
+        </ul>
+  
+        <button id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+    </div>
+  
+    <nav id="mobile-nav">
+      <ul>
+        <li><a href="/menu">MENU</a></li>
+        <li><a href="/biography">BIOGRAPHY</a></li>
+        <li><a href="/works">WORKS</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+  
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+  
+  header {
+    background: black;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    padding: 0 20px;
+    z-index: 1000;
+  }
+  
+  .header-left a {
+    color: white;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .header-left a:hover {
+    opacity: 0.7;
+  }
+  
+  .nav {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav > li > a {
+    color: white;
+    font-size: 15px;
+    margin: 15px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    padding-bottom: 5px;
+  }
+  
+  .nav li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: white;
+    transition: all 0.3s;
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+  
+  .nav li a:hover::after,
+  .nav li.current a::after {
+    transform: scaleX(1);
+  }
+  
+  main {
+    padding-top: 100px;
+  }
+  
+  /* ハンバーガーボタンのスタイル */
+  #hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px;
+    transition: 0.3s;
+  }
+  
+  #mobile-nav {
+    display: none;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 90px);
+    background-color: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+    z-index: 900;
+  }
+  
+  #mobile-nav ul {
+    list-style: none;
+    text-align: center;
+  }
+  
+  #mobile-nav ul li {
+    margin: 20px;
+  }
+  
+  #mobile-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  /* スマホ表示 */
+  @media screen and (max-width: 480px) {
+      .nav {
+          display: none;
+      }
+  
+      #hamburger {
+        display: block;
+      }
+  }
+  
+  /* アクティブ時のスタイル */
+  #hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  #hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  #mobile-nav.active {
+    display: flex;
+  }
+  </style>
+  
+  <script>
+  const hamburger: HTMLElement | null = document.getElementById('hamburger');
+  const mobileNav: HTMLElement | null = document.getElementById('mobile-nav');
+  
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+  }
+  </script>
+  

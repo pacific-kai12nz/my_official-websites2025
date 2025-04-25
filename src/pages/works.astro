@@ -1,0 +1,176 @@
+---
+import "../styles/global.css";
+import Header from "../components/HeaderComponents.astro";
+import Footer from "../components/FooterComponents.astro";
+import SocialIcons2 from "../components/SocialIcons2.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import "../styles/global.css";
+---
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WORKS</title>
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>
+    <Header></Header>
+    
+    <main>
+        <section id="title">
+            <h1 class="page-title">WORKS</h1>
+        </section>
+        <section id="works">
+            <h2 class="animated-text">UI/UX DESIGNER</h2>
+            <button class="view-all" onclick="window.location.href='https://www.vivivit.com/kainakamura'">View All</button>
+
+        </section>
+        
+        <section id="works">
+            <h2 class="animated-text">GRAPHIC DESIGNER</h2>
+            <button class="view-all" onclick="window.location.href='https://www.foriio.com/kainakamura-graphicdesigner'">View All</button>
+        </section>
+        
+        <section id="works">
+            <h2 class="animated-text">VIDEO CREATOR</h2>
+            <button class="view-all" onclick="window.location.href='https://lit.link/PacificKai12'">View All</button>
+        </section>
+        
+        <section id="works">
+            <h2 class="animated-text">COMING SOON</h2>
+            <button class="view-all" onclick="window.location.href=''">View All</button>
+        </section>
+        
+        <section id="works">
+            <h2 class="animated-text">SNS</h2>
+            <div class="button-container2">
+                <button class="view-all" onclick="window.location.href='https://www.instagram.com/pacific_kai.photo'">photography</button>
+                <button class="view-all" onclick="window.location.href='https://www.instagram.com/pacific_kai.art'">illstration</button>
+                <!-- <button class="view-all" onclick="window.location.href=''">View All</button> -->
+            </div>
+        </section>
+    </main>
+
+    <SocialIcons2 />
+    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+    <Footer></Footer>
+</body>
+</html>
+
+
+<style>
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: white;
+    color: black;
+    text-align: center;
+}
+.page-title {
+    text-align: center;
+    font-size: 50px;
+    padding: 60px 0;
+    margin-top: 50px;
+}
+#works {
+    margin-bottom: 50px;
+    margin-left: 80px;
+    text-align: left;
+}
+#works h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.view-all {
+    display: block;
+    width: 150px;
+    margin: 10px 0; 
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(to right, lightblue, lightcoral);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center; 
+}
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+/* ホバー時のアニメーション */
+.view-all:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(to right, lightcoral, lightblue);
+}
+/* クリック時のアニメーション */
+.view-all:active {
+    transform: scale(0.9); /* 押したときに少し縮む */
+    opacity: 0.8; /* 少し透明になる */
+}
+
+/* タイピング風 */
+.animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 2s steps(20, end) forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.animated-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 3s steps(20, end) infinite, blink 0.75s step-end infinite;
+}
+
+.twitter-icon {
+    color: white;
+    display: none;
+}
+
+/* スマホ表示時のみ（〜480px以下） */
+@media screen and (max-width: 480px) {
+    .page-title{
+        font-size: 40px;
+    }
+    #works {
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    #works h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .view-all {
+        margin: 10px auto;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .button-container2{
+        margin-bottom: 50px;
+    }
+}
+
+</style>

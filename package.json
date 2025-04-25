@@ -1,0 +1,33 @@
+{
+  "name": "my-offical-web-site",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@iconify-json/fa6-brands": "^1.2.5",
+    "@tailwindcss/vite": "^4.0.9",
+    "astro": "^5.3.0",
+    "astro-icon": "^1.1.5",
+    "swiper": "^11.2.4",
+    "zwitch": "^2.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "sass": "^1.85.1",
+    "sass-embedded": "^1.85.1",
+    "tailwindcss": "^4.0.9"
+  }
+}
