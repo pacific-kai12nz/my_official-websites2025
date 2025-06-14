@@ -1,0 +1,15 @@
+{
+  "title": "WORKS",
+  "categories": {
+    "uiux": "UI/UX DESIGNER",
+    "graphic": "GRAPHIC DESIGNER",
+    "video": "VIDEO CREATOR",
+    "comingsoon": "COMING SOON",
+    "sns": "SNS"
+  },
+  "view_all": "View All",
+  "sns_buttons": {
+    "photography": "photography",
+    "illustration": "illustration"
+  }
+}

@@ -1,17 +1,19 @@
 ---
 import "../styles/global.css";
-import Header from "../components/HeaderComponents.astro";
-import Footer from "../components/FooterComponents.astro";
-import SocialIcons2 from "../components/SocialIcons2.astro";
+import Header from "../../components/HeaderComponents.astro";
+import Footer from "../../components/FooterComponents.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import "../styles/global.css";
+import { useTranslation } from 'astro-i18next';
+const { t } = useTranslation(['portfolio']);
 ---
+
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORKS</title>
+    <title>{t('title')}</title>
     <link rel="stylesheet" href="../styles/global.css">
 </head>
 <body>
@@ -19,35 +21,34 @@ import "../styles/global.css";
     
     <main>
         <section id="title">
-            <h1 class="page-title">WORKS</h1>
+            <h1 class="page-title">{t('title')}</h1>
         </section>
-        <section id="works">
-            <h2 class="animated-text">UI/UX DESIGNER</h2>
-            <button class="view-all" onclick="window.location.href='https://www.vivivit.com/kainakamura'">View All</button>
 
+        <section id="works">
+            <h2 class="animated-text">{t('categories.uiux')}</h2>
+            <button class="view-all" onclick="window.location.href='https://www.vivivit.com/kainakamura'">{t('view_all')}</button>
         </section>
         
         <section id="works">
-            <h2 class="animated-text">GRAPHIC DESIGNER</h2>
-            <button class="view-all" onclick="window.location.href='https://www.foriio.com/kainakamura-graphicdesigner'">View All</button>
+            <h2 class="animated-text">{t('categories.graphic')}</h2>
+            <button class="view-all" onclick="window.location.href='https://www.foriio.com/kainakamura-graphicdesigner'">{t('view_all')}</button>
         </section>
         
         <section id="works">
-            <h2 class="animated-text">VIDEO CREATOR</h2>
-            <button class="view-all" onclick="window.location.href='https://lit.link/PacificKai12'">View All</button>
+            <h2 class="animated-text">{t('categories.video')}</h2>
+            <button class="view-all" onclick="window.location.href='https://lit.link/PacificKai12'">{t('view_all')}</button>
         </section>
         
         <section id="works">
-            <h2 class="animated-text">COMING SOON</h2>
-            <button class="view-all" onclick="window.location.href=''">View All</button>
+            <h2 class="animated-text">{t('categories.comingsoon')}</h2>
+            <button class="view-all">{t('view_all')}</button>
         </section>
         
         <section id="works">
-            <h2 class="animated-text">SNS</h2>
+            <h2 class="animated-text">{t('categories.sns')}</h2>
             <div class="button-container2">
-                <button class="view-all" onclick="window.location.href='https://www.instagram.com/pacific_kai.photo'">photography</button>
-                <button class="view-all" onclick="window.location.href='https://www.instagram.com/pacific_kai.art'">illstration</button>
-                <!-- <button class="view-all" onclick="window.location.href=''">View All</button> -->
+                <button class="view-all" onclick="window.location.href='https://www.instagram.com/pacific_kai.photo'">{t('sns_buttons.photography')}</button>
+                <button class="view-all" onclick="window.location.href='https://www.instagram.com/pacific_kai.art'">{t('sns_buttons.illustration')}</button>
             </div>
         </section>
     </main>

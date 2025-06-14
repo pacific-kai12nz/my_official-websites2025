@@ -1,0 +1,167 @@
+---
+import "../styles/global.css";
+import Footer from '../../layouts/Footer.astro';
+import Header from '../../layouts/Header.astro';
+import Carousel from "../../components/Carousel.astro";
+import MobileCarousel from "../../components/MobileCarousel.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import SocialIcons from "../../components/SocialIcons.astro";
+import "../styles/global.css";
+import { useTranslation } from 'astro-i18next';
+const { t } = useTranslation();
+---
+<!doctype html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{t('site_title')}</title>
+	</head>
+	<>
+		<Header></Header>
+		<main class="main">
+			<section class="main-visual">
+			  <div class="main-text">
+				<h1>K A I &thinsp;<br class="sp-br"> N A K A M U R A</h1>
+				<p class="sb-txt">Official site</p>
+			  </div>
+			</section>
+			<section class="topicks">
+			  <h1>PICK UP TOPICKS</h1>
+			  <div class="carousel-container">
+				<Carousel />
+			  </div>
+			  <div class="mobile-carousel-container">
+				<MobileCarousel />
+			  </div>
+			  <SocialIcons />
+			  <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+			</section>
+			  <slot />
+			</main>
+			 <footer>
+                 <Footer></Footer>
+			 </footer>
+
+	</body>
+</html>
+<style>
+	body{
+		background-color: black;
+	}
+	.main {
+      background-color: black;
+    }
+    @keyframes openingKv {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.main-visual {
+  background-image: url(/images/main-bg.JPG);
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  animation: openingKv 1.5s ease-in-out forwards;
+}
+@media screen and (max-width: 480px) {
+  .main-visual {
+    background-position: center; 
+    height: 60vh; 
+    justify-content: center; 
+  }
+}
+.main-text {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+}
+.sb-txt {
+  font-size: 4rem;
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.twitter-icon {
+  display: none !important;
+}
+
+/* PC表示 */
+@media screen and (min-width: 1025px) {
+  .sp-br {
+    display: none;
+  }
+  .mobile-carousel-container{
+    display: none;
+  }
+  .topicks h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+}
+
+/* スマホ表示（480px以下） */
+@media screen and (max-width: 480px) {
+  .main-text {
+    text-align: center;
+    font-size: 25px;
+  }
+  .sb-txt {
+    text-align: center;
+    font-size: 30px;
+  }
+  .topicks h1 {
+    font-size: 24px;
+  }
+   .social-icons {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .carousel-container{
+    display: none;
+  }
+  .mobile-carousel-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .topicks h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  margin-top: 20px;
+}
+}
+
+</style>

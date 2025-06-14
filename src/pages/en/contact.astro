@@ -1,29 +1,36 @@
 ---
 import "../styles/global.css";
-import Header from "../components/HeaderComponents.astro";
-import Footer from "../components/FooterComponents.astro";
-import SocialIcons2 from "../components/SocialIcons2.astro";
+import Header from "../../components/HeaderComponents.astro";
+import Footer from "../../components/FooterComponents.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import "../styles/global.css";
+import { useTranslation } from 'astro-i18next';
+const { t } = useTranslation(['contact']);
 ---
-<html lang="ja">
+
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTACT</title>
+    <title>{t('title')}</title>
     <link rel="stylesheet" href="../styles/global.css">
 </head>
+
 <body>
     <Header></Header>
     <main>
         <section id="title">
-            <h1 class="page-title">CONTACT</h1>
+            <h1 class="page-title">{t('title')}</h1>
         </section>
+
         <section id="works">
-            <button class="view-all" onclick="window.location.href='https://forms.gle/q4xSwoEFNzo9G48UA';">Click here to contact us</button>
+            <button class="view-all" onclick="window.location.href='https://forms.gle/q4xSwoEFNzo9G48UA';">
+                {t('button_text')}
+            </button>
         </section>
     </main>
+
     <SocialIcons2 />
     <Footer></Footer>
     <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
@@ -49,7 +56,6 @@ body {
 
 #works {
     display: flex;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -75,14 +81,11 @@ body {
     display: flex;
     gap: 20px;
     align-items: center;
-    /* margin-top: 500px; */
 }
-/* ホバー時のアニメーション */
 .view-all:hover {
     transform: scale(1.1); 
     background: linear-gradient(to right, lightcoral, lightblue);
 }
-/* クリック時のアニメーション */
 .view-all:active {
     transform: scale(0.9);
     opacity: 0.8;
@@ -110,7 +113,6 @@ footer {
     width: 100%;
 }
 
-/* Twitter Icon */
 .twitter-icon {
     color: white;
     display: none;

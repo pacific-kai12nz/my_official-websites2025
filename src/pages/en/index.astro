@@ -1,22 +1,24 @@
 ---
 import "../styles/global.css";
-import Footer from '../layouts/Footer.astro';
-import Header from '../layouts/Header.astro';
-import Carousel from "../components/Carousel.astro";
-import MobileCarousel from "../components/MobileCarousel.astro";
+import Footer from '../../layouts/Footer.astro';
+import Header from '../../layouts/Header.astro';
+import Carousel from "../../components/Carousel.astro";
+import MobileCarousel from "../../components/MobileCarousel.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import SocialIcons from "../components/SocialIcons.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
 import "../styles/global.css";
+import { useTranslation } from 'astro-i18next';
+const { t } = useTranslation();
 ---
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
 		<meta name="generator" content={Astro.generator} />
-		<title>KAI NAKAMURA</title>
+		<title>{t('site_title')}</title>
 	</head>
 	<>
 		<Header></Header>
@@ -77,8 +79,6 @@ import "../styles/global.css";
 }
 @media screen and (max-width: 480px) {
   .main-visual {
-    /* スマホ用の画像（必要なら変更） */
-    /* background-image: url(/images/main-bg2.JPG); */
     background-position: center; 
     height: 60vh; 
     justify-content: center; 
@@ -86,7 +86,7 @@ import "../styles/global.css";
 }
 .main-text {
   position: absolute;
-  top: 80%; /* 50% から 55% に変更して少し下へ */
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -104,6 +104,7 @@ import "../styles/global.css";
 .twitter-icon {
   display: none !important;
 }
+
 /* PC表示 */
 @media screen and (min-width: 1025px) {
   .sp-br {
@@ -136,7 +137,6 @@ import "../styles/global.css";
   .topicks h1 {
     font-size: 24px;
   }
-   /* SNSアイコンの余白を詰める */
    .social-icons {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -148,7 +148,6 @@ import "../styles/global.css";
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 100vh; */
     margin: auto;
     padding: 1rem;
     color: white;

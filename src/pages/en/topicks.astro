@@ -1,0 +1,138 @@
+---
+import "../../styles/global.css";
+import Header from "../../components/HeaderComponents.astro";
+import Footer from "../../components/FooterComponents.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { useTranslation } from 'astro-i18next';
+const { t } = useTranslation(['topicks']);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t('title')}</title>
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <section id="title">
+        <h1 class="page-title">{t('title')}</h1>
+      </section>
+
+      <div class="container">
+        <div class="news-title">{t('news_title')}<em>NEW</em></div>
+        <div class="news-date">{t('news_date')}</div>
+        <img class="feature-image" src="/images/ANOTHER-SKY-in-NZ.jpg" alt="Feature Image" />
+        <div class="news-content">
+          <p>{t('description')}</p>
+          <br />
+          <p>
+            {t('watch_video')}<br />
+            <a href="https://youtu.be/1HTSFoZo4Ws?si=pXuJ_gLS9aKFvcck" class="animated-button">{t('watch_button')}</a>
+          </p>
+
+          <p class="link-section">
+            {t('youtube_channel')}<br />
+            <a href="https://www.youtube.com/@PacificKai_World" class="animated-button">{t('channel_button')}</a>
+          </p>
+        </div>
+      </div>
+    </main>
+    <SocialIcons2 />
+    <Footer />
+    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+  </body>
+</html>
+<style>
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(#f5f0f6, #f9f5f7);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+}
+
+.news-title {
+    font-size: 24px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.news-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+img.feature-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.news-content {
+    line-height: 1.8;
+}
+
+.link-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-section a:hover {
+    text-decoration: underline;
+}
+
+.animated-button {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, lightcoral, lightblue);
+  background-size: 200% auto;
+  transition: 0.5s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.animated-button:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+
+.twitter-icon {
+    color: white;
+    display: none;
+}
+
+</style>
+

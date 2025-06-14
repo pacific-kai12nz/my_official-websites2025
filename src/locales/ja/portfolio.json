@@ -1,0 +1,15 @@
+{
+  "title": "ポートフォリオ",
+  "categories": {
+    "uiux": "UI/UX デザイナー",
+    "graphic": "グラフィックデザイナー",
+    "video": "動画制作",
+    "comingsoon": "coming soon",
+    "sns": "SNS"
+  },
+  "view_all": "すべて見る",
+  "sns_buttons": {
+    "photography": "写真アカウント",
+    "illustration": "イラストアカウント"
+  }
+}
