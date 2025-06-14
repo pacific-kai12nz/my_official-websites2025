@@ -5,8 +5,8 @@ import Footer from "../../components/FooterComponents.astro";
 import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { useTranslation } from 'astro-i18next';
-const { t } = useTranslation(['biography']);
+import useTranslation from 'astro-i18next';
+const { t } = useTranslation();
 const profileList = t('profile', { returnObjects: true }) as unknown as string[];
 
 ---

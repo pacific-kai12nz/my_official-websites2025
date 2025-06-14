@@ -5,8 +5,8 @@ import Footer from "../../components/FooterComponents.astro";
 import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { useTranslation } from 'astro-i18next';
-const { t } = useTranslation(['menu']);
+import useTranslation from 'astro-i18next';
+const { t } = useTranslation();
 ---
 
 <html lang="ja">
@@ -25,7 +25,9 @@ const { t } = useTranslation(['menu']);
         </section>
 
         <section id="works">
-            <!-- 今後、メニュー内容が増えた時はここに追加 -->
+            <button class="view-all" onclick="window.location.href='https://forms.gle/q4xSwoEFNzo9G48UA';">
+                {t('button_text')}
+            </button>
         </section>
     </main>
 
@@ -35,6 +37,7 @@ const { t } = useTranslation(['menu']);
 </body>
 </html>
 
+
 <style>
 body {
     font-family: 'Oswald', sans-serif;
@@ -42,20 +45,52 @@ body {
     color: black;
     text-align: center;
 }
+
+/* Title */
 .page-title {
     text-align: center;
     font-size: 50px;
     padding: 60px 0;
     margin-top: 50px;
 }
+
 #works {
     display: flex;
     align-items: center;
 }
+
 #works h2 {
     font-size: 50px;
     margin-bottom: 20px; 
 }
+
+.view-all {
+    display: block;
+    width: 180px;
+    margin: 10px auto; 
+    padding: 5px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(to right, lightblue, lightcoral);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 200px;
+}
+.button-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.view-all:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(to right, lightcoral, lightblue);
+}
+.view-all:active {
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -63,9 +98,11 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
 main {
     flex: 1;
 }
+
 footer {
     background-color: black;
     text-align: center;
@@ -75,6 +112,7 @@ footer {
     padding: 20px;
     width: 100%;
 }
+
 .twitter-icon {
     color: white;
     display: none;
