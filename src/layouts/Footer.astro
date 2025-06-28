@@ -25,14 +25,15 @@ small {
 @media screen and (max-width: 480px){
   footer{
     padding: 20px 0; /* 上下に余白を追加 */
-    position: absolute;
-    bottom: 0;
+    position: relative; /* absoluteからrelativeに変更 */
     width: 100%;
     margin-top: 30px;
+    margin-bottom: 20px; /* 下部に余白を追加 */
   }
   small{
-  margin-top: 30px;
-  margin-bottom: 10px;
-}
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0 10px; /* 左右に余白を追加 */
+  }
 }
 </style>

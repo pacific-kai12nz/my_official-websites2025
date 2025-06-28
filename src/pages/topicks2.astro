@@ -1,12 +1,12 @@
 ---
-import "../../styles/global.css";
-import Header from "../../layouts/Header.astro";
-import Footer from "../../layouts/Footer.astro";
-import SocialIcons2 from "../../components/SocialIcons2.astro";
+import "../styles/global.css";
+import Header from "../layouts/Header.astro";
+import Footer from "../layouts/Footer.astro";
+import SocialIcons2 from "../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { getLangFromUrl, useTranslations } from '../../i18n/ui';
-import LanguageToggle from "../../components/LanguageToggle.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import LanguageToggle from "../components/LanguageToggle.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,7 +17,7 @@ const t = useTranslations(lang);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PICK UP TOPICS</title>
+    <title>PICK UP TOPICKS</title>
   </head>
 
   <body>
@@ -25,19 +25,19 @@ const t = useTranslations(lang);
     <LanguageToggle />
     <main>
       <section id="title">
-        <h1 class="page-title">PICK UP TOPICS</h1>
+        <h1 class="page-title">PICK UP TOPICKS</h1>
       </section>
 
       <div class="container">
-        <div class="news-title"><em class="new-badge">NEW</em> Important Announcement</div>
+        <div class="news-title"><em class="new-badge">NEW</em> 大切なお知らせ</div>
         <div class="news-date">2025.04.20 NEWS</div>
         <img class="feature-image" src="/images/important.png" alt="Feature Image" />
         <div class="news-content">
-          <p>I would like to announce that I have officially started working independently as a UI/UX designer. Honestly, it was a very difficult and uncertain decision, but I am committed to helping clients bring their visions to life. Starting in 2025, I will challenge myself with new things one step at a time, even when they seem impossible. As this is the final year of my 20s, I want to face the future with no regrets, remain grateful to everyone who has supported me, and continue to work hard and grow. I am preparing for many new projects and hope to share more exciting updates with you soon. I aim to expand my activities not only in Japan but also globally. Please stay tuned for future announcements. For work inquiries, feel free to contact me via Instagram DM or through the contact form.</p>
+          <p>この度、UI/UXデザイナーとして独立しましたということをご報告させてください。正直めちゃくちゃ不安な決断はありましたが、これからはお客様の思いを形にするお手伝いをさせていただけたらと考えております。2025年から無理だろなこれ？って思うこと程、何を言われようが躊躇せず1つずつ確実に新しい事に挑戦していきたいと考えています。2025年はラスト1年なので後悔が残らないようにこれまで以上に真っ直ぐ未来を見据え、お世話になった方々に感謝の気持ちを忘れず、一歩ずつ、少しでも成長できるように努力を重ねていく所存です。2025年から新しい事を始めます。今後も新しいご報告がどんどんできるように試行錯誤しながら準備をしていますので、良い報告が出来たらなと考えています。国内だけでなく国外でも活躍出来るように新しいご報告ができる日まで、もう暫くお待ちください。お仕事のご依頼はInstagramのDMまたはお問い合わせまでご連絡ください。</p>
           <br />
           <p>
-            ■ Official Instagram<br />
-            <a href="https://www.instagram.com/kaipora_12nz" class="animated-button">Click here</a>
+            ■公式Instagram<br />
+            <a href="https://www.instagram.com/kaipora_12nz" class="animated-button">こちらまで</a>
           </p>
         </div>
       </div>

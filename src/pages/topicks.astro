@@ -1,12 +1,12 @@
 ---
-import "../../styles/global.css";
-import Header from "../../layouts/Header.astro";
-import Footer from "../../layouts/Footer.astro";
-import SocialIcons2 from "../../components/SocialIcons2.astro";
+import "../styles/global.css";
+import Header from "../layouts/Header.astro";
+import Footer from "../layouts/Footer.astro";
+import SocialIcons2 from "../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { getLangFromUrl, useTranslations } from '../../i18n/ui';
-import LanguageToggle from "../../components/LanguageToggle.astro";
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import LanguageToggle from "../components/LanguageToggle.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,7 +17,7 @@ const t = useTranslations(lang);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PICK UP TOPICS</title>
+    <title>PICK UP TOPICKS</title>
   </head>
 
   <body>
@@ -25,30 +25,33 @@ const t = useTranslations(lang);
     <LanguageToggle />
     <main>
       <section id="title">
-        <h1 class="page-title">PICK UP TOPICS</h1>
+        <h1 class="page-title">PICK UP TOPICKS</h1>
       </section>
 
       <div class="container">
-        <div class="news-title"><em class="new-badge">NEW</em> Important Announcement</div>
-        <div class="news-date">2025.04.20 NEWS</div>
-        <img class="feature-image" src="/images/important.png" alt="Feature Image" />
+        <div class="news-title"><em class="new-badge">NEW</em> YouTube開設しました！</div>
+        <div class="news-date">2025.03.15 NEWS</div>
+        <img class="feature-image" src="/images/ANOTHER-SKY-in-NZ.jpg" alt="Feature Image" />
         <div class="news-content">
-          <p>I would like to announce that I have officially started working independently as a UI/UX designer. Honestly, it was a very difficult and uncertain decision, but I am committed to helping clients bring their visions to life. Starting in 2025, I will challenge myself with new things one step at a time, even when they seem impossible. As this is the final year of my 20s, I want to face the future with no regrets, remain grateful to everyone who has supported me, and continue to work hard and grow. I am preparing for many new projects and hope to share more exciting updates with you soon. I aim to expand my activities not only in Japan but also globally. Please stay tuned for future announcements. For work inquiries, feel free to contact me via Instagram DM or through the contact form.</p>
+          <p>今回は大好きな日本のテレビ番組アナザースカイを元にアナザースカイ風に自分の原点であるニュージーランドで改めて振り返りました。完全再現！完全コピー！で自分なりに原点に立ち返り表現しました。一才笑なし、バラエティなしで全編英語少し日本語を織り交ぜています！おそらく今回限りの企画です。自分で撮っていて恥ずかしいですが、自分なりに試行錯誤して言葉や思いを表現してみました。ニュージーランドが好きまたは、気になる方に是非動画を見て楽しんでもらえたら嬉しいです。2025年からは自分を動画を通じて表現出来るように頑張りますのでよろしくお願いたします。</p>
           <br />
           <p>
-            ■ Official Instagram<br />
-            <a href="https://www.instagram.com/kaipora_12nz" class="animated-button">Click here</a>
+            ■動画のご視聴はこちら <br />
+            <a href="https://youtu.be/1HTSFoZo4Ws?si=pXuJ_gLS9aKFvcck" class="animated-button">視聴する</a>
+          </p>
+
+          <p class="link-section">
+            ■公式YouTubeはこちら！ <br />
+            <a href="https://www.youtube.com/@PacificKai_World" class="animated-button">他の動画を見る</a>
           </p>
         </div>
       </div>
     </main>
-
     <SocialIcons2 />
     <Footer />
     <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
   </body>
 </html>
-
 <style>
 
 body {

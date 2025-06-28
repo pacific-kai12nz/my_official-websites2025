@@ -1,27 +1,31 @@
 ---
-import "../styles/global.css";
-import Footer from '../../layouts/Footer.astro';
-import Header from '../../layouts/Header.astro';
+import "../../styles/global.css";
+import Header from "../../layouts/Header.astro";
+import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
 import Carousel from "../../components/Carousel.astro";
 import MobileCarousel from "../../components/MobileCarousel.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import SocialIcons from "../../components/SocialIcons.astro";
-import "../styles/global.css";
-import { useTranslation } from 'astro-i18next';
-const { t } = useTranslation();
+import { getLangFromUrl, useTranslations } from '../../i18n/ui';
+import LanguageToggle from '../../components/LanguageToggle.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" href="path/to/swiper-bundle.min.css" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{t('site_title')}</title>
+		<title>{t('site.title')}</title>
 	</head>
-	<>
+	<body>
 		<Header></Header>
+        <LanguageToggle />
 		<main class="main">
 			<section class="main-visual">
 			  <div class="main-text">
@@ -30,24 +34,30 @@ const { t } = useTranslation();
 			  </div>
 			</section>
 			<section class="topicks">
-			  <h1>PICK UP TOPICKS</h1>
+			  <h1>{t('site.pick_up')}</h1>
 			  <div class="carousel-container">
 				<Carousel />
 			  </div>
-			  <div class="mobile-carousel-container">
+			  <section id="mobile-carousel-section">
 				<MobileCarousel />
-			  </div>
-			  <SocialIcons />
-			  <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+			  </section>
 			</section>
 			  <slot />
 			</main>
-			 <footer>
-                 <Footer></Footer>
-			 </footer>
 
-	</body>
-</html>
+			<!-- PC用ソーシャルアイコン -->
+			<div class="social-icons-pc">
+				<SocialIcons />
+			</div>
+			
+			<!-- スマホ用ソーシャルアイコン -->
+			<div class="social-icons-mobile">
+				<SocialIcons2 />
+			</div>
+
+			<Footer></Footer>
+		</body>
+	</html>
 <style>
 	body{
 		background-color: black;
@@ -164,4 +174,23 @@ const { t } = useTranslation();
 }
 }
 
-</style>
+/* ソーシャルアイコンの表示制御 */
+.social-icons-pc {
+    display: block;
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
+}
+
+</style> 
