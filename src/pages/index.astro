@@ -41,12 +41,10 @@ const t = useTranslations(lang);
 			  <div class="mobile-carousel-container">
 				<MobileCarousel />
 			  </div>
-			  <div class="social-icons-pc">
 				<SocialIcons />
-			  </div>
-			  <div class="social-icons-mobile">
+			  <!-- <div class="social-icons-mobile">
 				<SocialIcons2 />
-			  </div>
+			  </div> -->
 			  <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
 			</section>
 			  <slot />
@@ -185,13 +183,29 @@ const t = useTranslations(lang);
   }
 }
 
-/* ソーシャルアイコンの表示制御 */
-.social-icons-pc {
+/* カールセルの表示制御 */
+#carousel-section {
     display: block;
 }
 
-.social-icons-mobile {
+#mobile-carousel-section {
     display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #carousel-section {
+        display: none;
+    }
+    
+    #mobile-carousel-section {
+        display: block;
+    }
+}
+
+/* ホームページ専用のソーシャルアイコン色設定 */
+.social-icons-pc .social-icons a,
+.social-icons-mobile .social-icons a {
+    color: white !important;
 }
 
 @media screen and (max-width: 768px) {

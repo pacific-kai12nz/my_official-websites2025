@@ -152,12 +152,40 @@ main {
 
 /* スマホ表示 */
 @media screen and (max-width: 480px) {
+    header {
+        height: 70px;
+        padding: 0 15px;
+    }
+
+    .header-left a {
+        font-size: 24px;
+    }
+
     .nav {
         display: none;
     }
 
     #hamburger {
-      display: block;
+        display: block;
+    }
+
+    #hamburger span {
+        width: 22px;
+        height: 2px;
+        margin: 3px;
+    }
+
+    #mobile-nav {
+        top: 70px;
+        height: calc(100% - 70px);
+    }
+
+    #mobile-nav ul li a {
+        font-size: 20px;
+    }
+
+    main {
+        padding-top: 80px;
     }
 }
 

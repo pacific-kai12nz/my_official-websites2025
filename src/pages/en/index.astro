@@ -37,25 +37,18 @@ const t = useTranslations(lang);
 			  <h1>{t('site.pick_up')}</h1>
 			  <div class="carousel-container">
 				<Carousel />
-			  </div>
-			  <section id="mobile-carousel-section">
-				<MobileCarousel />
-			  </section>
-			</section>
-			  <slot />
-			</main>
-
-			<!-- PC用ソーシャルアイコン -->
-			<div class="social-icons-pc">
-				<SocialIcons />
-			</div>
-			
-			<!-- スマホ用ソーシャルアイコン -->
-			<div class="social-icons-mobile">
-				<SocialIcons2 />
-			</div>
-
-			<Footer></Footer>
+      </div>
+      <div class="mobile-carousel-container">
+      <MobileCarousel />
+      </div>
+      <SocialIcons />
+      <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+    </section>
+      <slot />
+    </main>
+<footer>
+  <Footer></Footer>
+</footer>
 		</body>
 	</html>
 <style>
@@ -174,14 +167,6 @@ const t = useTranslations(lang);
 }
 }
 
-/* ソーシャルアイコンの表示制御 */
-.social-icons-pc {
-    display: block;
-}
-
-.social-icons-mobile {
-    display: none;
-}
 
 @media screen and (max-width: 768px) {
     .social-icons-pc {
@@ -189,6 +174,25 @@ const t = useTranslations(lang);
     }
     
     .social-icons-mobile {
+        display: block;
+    }
+}
+
+/* カールセルの表示制御 */
+#carousel-section {
+    display: block;
+}
+
+#mobile-carousel-section {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #carousel-section {
+        display: none;
+    }
+    
+    #mobile-carousel-section {
         display: block;
     }
 }

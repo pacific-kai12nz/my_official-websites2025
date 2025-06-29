@@ -1,13 +1,13 @@
 ---
-import "../styles/global.css";
-import Header from "../layouts/Header.astro";
-import Footer from "../layouts/Footer.astro";
-import SocialIcons from "../components/SocialIcons.astro";
-import SocialIcons2 from "../components/SocialIcons2.astro";
+import "../../styles/global.css";
+import Header from "../../layouts/Header.astro";
+import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { getLangFromUrl, useTranslations } from '../i18n/ui';
-import LanguageToggle from "../components/LanguageToggle.astro";
+import { getLangFromUrl, useTranslations } from '../../i18n/ui';
+import LanguageToggle from "../../components/LanguageToggle.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -30,15 +30,33 @@ const t = useTranslations(lang);
       </section>
 
       <div class="container">
-        <div class="news-title"><em class="new-badge">NEW</em> 大切なお知らせ</div>
-        <div class="news-date">2025.04.20 NEWS</div>
-        <img class="feature-image" src="/images/important.png" alt="Feature Image" />
+        <div class="news-title"><em class="new-badge">NEW</em>
+            We’ve launched Zerokuri and our freelance team Wondaston!</div>
+        <div class="news-date">2025.06.30 NEWS</div>
+        <img class="feature-image" src="/images/branding.jpg" alt="Feature Image" />
         <div class="news-content">
-          <p>この度、UI/UXデザイナーとして独立しましたということをご報告させてください。正直めちゃくちゃ不安な決断はありましたが、これからはお客様の思いを形にするお手伝いをさせていただけたらと考えております。2025年から無理だろなこれ？って思うこと程、何を言われようが躊躇せず1つずつ確実に新しい事に挑戦していきたいと考えています。2025年はラスト1年なので後悔が残らないようにこれまで以上に真っ直ぐ未来を見据え、お世話になった方々に感謝の気持ちを忘れず、一歩ずつ、少しでも成長できるように努力を重ねていく所存です。2025年から新しい事を始めます。今後も新しいご報告がどんどんできるように試行錯誤しながら準備をしていますので、良い報告が出来たらなと考えています。国内だけでなく国外でも活躍出来るように新しいご報告ができる日まで、もう暫くお待ちください。お仕事のご依頼はInstagramのDMまたはお問い合わせまでご連絡ください。</p>
+          <p>
+            We’ve launched a new community called <strong>ZERO CREATION (Zerokuri)</strong> and formed a freelance team named <strong>Wondaston</strong>.<br />
+  <em>“Don’t give up on your ‘I want to try.’ Even from zero, you can become a creator. Take your first step with Zerokuri.”</em><br />
+  <strong>【Current Departments】</strong><br />
+  Engineers<br />
+  Designers<br />
+  Video Creators<br />
+  Photographers<br />
+  And many other creative fields!<br />
+  You’re free to challenge anything. Many of our members started with no experience! Dreams give power to your goals and Zerokuri is here to help make your dreams come true. It’s a community circle for people who want to bring their ideas to life. We also offer support to help you turn them into reality!<br />
+  You can connect with creators not only in Japan, but all over the world! You’ll have opportunities to expand your network and build peer connections.<br />
+  We’ll provide the space how you make the most of it is up to you!<br />
+  If you’re serious and motivated, we’re waiting for you! We’re always looking for new members!<br />
+          </p>
           <br />
           <p>
-            ■公式Instagram<br />
-            <a href="https://www.instagram.com/kaipora_12nz" class="animated-button">こちらまで</a>
+            ■Official Instagram<br />
+            <a href="https://www.instagram.com/01zero.creation" class="animated-button">Click here</a>
+          </p>
+          <p>
+            ■Official X<br />
+            <a href="https://x.com/01_zerocreation" class="animated-button">Click here</a>
           </p>
         </div>
       </div>
@@ -162,20 +180,6 @@ img.feature-image {
     display: none;
 }
 
-/* ソーシャルアイコンの表示制御 */
-.social-icons-pc {
-    display: block;
-}
-
-.social-icons-mobile {
-    display: none;
-}
-
-/* topicks2ページ専用のソーシャルアイコン色設定 */
-.social-icons-pc .social-icons a,
-.social-icons-mobile .social-icons a {
-    color: black !important;
-}
 
 @media screen and (max-width: 768px) {
     .social-icons-pc {
@@ -188,4 +192,3 @@ img.feature-image {
 }
 
 </style>
-

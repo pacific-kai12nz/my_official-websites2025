@@ -2,6 +2,7 @@
 import "../../styles/global.css";
 import Header from "../../layouts/Header.astro";
 import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
 import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -29,7 +30,8 @@ const t = useTranslations(lang);
       </section>
 
       <div class="container">
-        <div class="news-title"><em class="new-badge">NEW</em> Launched YouTube Channel!</div>
+        <div class="news-title"> Launched YouTube Channel!</div>
+        <!-- <em class="new-badge">NEW</em> -->
         <div class="news-date">2025.03.15 NEWS</div>
         <img class="feature-image" src="/images/ANOTHER-SKY-in-NZ.jpg" alt="Feature Image" />
         <div class="news-content">
@@ -47,8 +49,8 @@ const t = useTranslations(lang);
         </div>
       </div>
     </main>
-    <SocialIcons2 />
-    <Footer />
+        <SocialIcons2 />
+        <Footer />
     <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
   </body>
 </html>
@@ -163,6 +165,31 @@ img.feature-image {
 .twitter-icon {
     color: white;
     display: none;
+}
+
+/* ソーシャルアイコンの表示制御 */
+.social-icons-pc {
+    display: block;
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+/* topicksページ専用のソーシャルアイコン色設定 */
+.social-icons-pc .social-icons a,
+.social-icons-mobile .social-icons a {
+    color: black !important;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
 }
 
 </style>

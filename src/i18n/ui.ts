@@ -9,7 +9,7 @@ export const defaultLang = "ja";
 const biographyJa = {
   title: "BIOGRAPHY",
   name: "KAI NAKAMURA",
-  photo_by: "photo by @Hara_Souta",
+  photo_by: "photo by Hara Souta",
   profile: [
     "1996年12月12日、大阪府東大阪市出身",
     "2013年 高校の時にニュージーランドへ留学",
@@ -32,7 +32,7 @@ const biographyJa = {
 const biographyEn = {
   title: "BIOGRAPHY",
   name: "KAI NAKAMURA",
-  photo_by: "photo by @Hara_Souta",
+  photo_by: "photo by Hara Souta",
   profile: [
     "Born on December 12, 1996, in Higashi-Osaka, Osaka, Japan.",
     "Studied abroad in New Zealand during high school in 2013.",

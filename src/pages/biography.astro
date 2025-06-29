@@ -49,15 +49,7 @@ const t = useTranslations(lang);
     </h5>
   </main>
 
-  <!-- PC用ソーシャルアイコン -->
-  <div class="social-icons-pc">
-    <SocialIcons />
-  </div>
-  
-  <!-- スマホ用ソーシャルアイコン -->
-  <div class="social-icons-mobile">
-    <SocialIcons2 />
-  </div>
+  <SocialIcons2 />
 
   <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
   <Footer />
@@ -240,6 +232,12 @@ const t = useTranslations(lang);
 
 .social-icons-mobile {
     display: none;
+}
+
+/* biographyページ専用のソーシャルアイコン色設定 */
+.social-icons-pc .social-icons a,
+.social-icons-mobile .social-icons a {
+    color: black !important;
 }
 
 @media screen and (max-width: 768px) {

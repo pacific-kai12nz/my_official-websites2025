@@ -2,6 +2,7 @@
 import "../../styles/global.css";
 import Header from "../../layouts/Header.astro";
 import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
 import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -56,7 +57,16 @@ const t = useTranslations(lang);
         </section>
     </main>
 
-    <SocialIcons2 />
+    <!-- PC用ソーシャルアイコン -->
+    <div class="social-icons-pc">
+        <SocialIcons />
+    </div>
+    
+    <!-- スマホ用ソーシャルアイコン -->
+    <div class="social-icons-mobile">
+        <SocialIcons2 />
+    </div>
+
     <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
     <Footer></Footer>
 </body>
@@ -188,4 +198,28 @@ body {
     }
 }
 
+/* ソーシャルアイコンの表示制御 */
+.social-icons-pc {
+    display: block;
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+/* portfolioページ専用のソーシャルアイコン色設定 */
+.social-icons-pc .social-icons a,
+.social-icons-mobile .social-icons a {
+    color: black !important;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
+}
 </style>
