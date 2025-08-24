@@ -40,13 +40,26 @@ const t = useTranslations(lang);
 
     <h2 class="name fade-up">{t('name')}</h2>
 
-    <h5 class="txt fade-up">
-      <ul>
-        {(t('profile') as string[]).map((item, index) => (
-          <li>{item}</li>
-        ))}
+    <div class="profile-container fade-up">
+      <ul class="profile-list">
+        {(t('profile') as string[]).map((item, index) => {
+          console.log('Item:', item, 'Index:', index, 'Type:', typeof item, 'Length:', item.length);
+          if (item === '') {
+            console.log('Empty item detected');
+            return <li class="section-spacer"></li>;
+          } else if (item === 'SKILLS') {
+            console.log('SKILLS detected');
+            return <li class="section-title">{item}</li>;
+          } else if (item === 'DESIGN TOOLS:' || item === 'LANGUAGES:' || item === 'FRAMEWORKS & LIBRARIES:') {
+            console.log('Section title detected:', item);
+            return <li class="section-title">{item}</li>;
+          } else {
+            console.log('Regular item:', item);
+            return <li class="profile-item">{item}</li>;
+          }
+        })}
       </ul>
-    </h5>
+    </div>
   </main>
 
   <SocialIcons2 />
@@ -85,16 +98,38 @@ const t = useTranslations(lang);
   border-radius: 5px;
   display: block;
 }
-.txt {
+.profile-container {
     margin-top: 30px;
-    margin-bottom:40px ;
+    margin-bottom: 40px;
     display: flex;
     justify-content: center;
     font-family: 'Oswald', sans-serif;
 }
-.txt ul {
+
+.profile-list {
     text-align: left;
     list-style-position: inside;
+    max-width: 800px;
+    width: 100%;
+}
+
+.profile-item {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.section-spacer {
+    height: 20px;
+    list-style: none;
 }
 .fade-up {
     opacity: 0;

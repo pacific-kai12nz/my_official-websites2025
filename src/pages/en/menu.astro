@@ -30,8 +30,10 @@ const t = useTranslations(lang);
         </section>
 
         <section id="works">
-            <!-- 今後、メニュー内容が増えた時はここに追加 -->
-             <h1 class="page-subtitle">COMING SOON</h1>
+            <h1 class="page-subtitle">WORKS</h1>
+            <div class="menu-links">
+                <a href="/en/works" class="menu-link">View Works</a>
+            </div>
         </section>
     </main>
         <SocialIcons2 />
@@ -71,6 +73,29 @@ body {
 #works h2 {
     font-size: 50px;
     margin-bottom: 20px; 
+}
+
+.menu-links {
+    margin-top: 30px;
+}
+
+.menu-link {
+    display: inline-block;
+    background: linear-gradient(to right, lightblue, lightcoral);
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, lightcoral, lightblue);
 }
 html, body {
     height: 100%;

@@ -1,4 +1,474 @@
 ---
-// Redirect /en/works to /en/portfolio
-return Astro.redirect('/en/portfolio');
---- 
+/* astro:async */
+import "../../styles/global.css";
+import Header from "../../layouts/Header.astro";
+import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { getLangFromUrl, useTranslations } from '../../i18n/ui';
+import LanguageToggle from "../../components/LanguageToggle.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works</title>
+    <link rel="stylesheet" href="../../styles/global.css">
+</head>
+<body>
+    <Header></Header>
+    <LanguageToggle />
+    <main>
+        <section id="title">
+            <h1 class="page-title">WORKS</h1>
+        </section>
+
+        <section id="works-container">
+            <!-- Tourism Crossover Summit 2025 Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/expo-works.png" alt="Tourism Crossover Summit 2025" class="project-image">
+                </div>
+                <div class="project-details">
+                    <h2 class="project-title">[LP] Tourism Crossover Summit 2025 in Kansai/Osaka Expo</h2>
+                    <p class="project-client">Tourism Crossover Association</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Astro</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://kankou-xoversummit2025.pages.dev/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    <p class="disclaimer">*Due to project circumstances, it transitions to the preview environment</p>
+                </div>
+
+            </div>
+
+            <!-- Personal Color Diagnosis Site Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/personal colour-woks.png" alt="Personal Color Diagnosis Site" class="project-image">
+                </div>
+                <div class="project-details">
+                    <h2 class="project-title">Personal Color Diagnosis Site</h2>
+                    <p class="project-client">Personal Development</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">face-api</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+
+            </div>
+
+            <!-- Iyara Relaxation Salon Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/aiyara-works.png" alt="Iyara Relaxation Salon" class="project-image">
+                </div>
+                <div class="project-details">
+                    <h2 class="project-title">Iyara Relaxation Salon 【Iyara Massage & Chiropractic】</h2>
+                    <p class="project-client">Corporate Website</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Adobe XD</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://iyara2980.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+
+            <!-- Kyoto University of Foreign Studies Airline Project 10th Anniversary Site -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/airline-works.png" alt="Airline Project 10th Anniversary Site" class="project-image">
+                </div>
+                <div class="project-details">
+                    <h2 class="project-title">Kyoto University of Foreign Studies Airline Project 10th Anniversary Site</h2>
+                    <p class="project-client">Introduction Site</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe XD</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                        <span class="tech-tag">Adobe Photoshop</span>
+                    </div>
+                    <a href="https://www.figma.com/design/dnIphAaSjJK5r8RJa7tIXc/airline-project10th2025?node-id=1-2&t=OX9QqKfUdjlUxy8F-1" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    <p class="disclaimer">*Due to project circumstances, it transitions to design only</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graphic Design & Videographer Section -->
+        <section class="additional-links">
+            <a href="https://www.foriio.com/kaipora12nz" target="_blank" rel="noopener noreferrer" class="graphic-video-button">
+                Graphic Designer / Videographer
+            </a>
+        </section>
+    </main>
+    
+    <SocialIcons2 />
+    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+    <Footer></Footer>
+</body>
+</html>
+
+<style>
+body {
+    font-family: 'Oswald', sans-serif;
+    background: white;
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 50px;
+    padding: 60px 0;
+    margin-top: 50px;
+    color: #333;
+    text-shadow: none;
+}
+
+#works-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.project-card {
+    margin-bottom: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    color: #333;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-visual {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.project-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.device-mockup {
+    position: relative;
+}
+
+.device-mockup.laptop {
+    width: 300px;
+    height: 200px;
+}
+
+.device-mockup.mobile {
+    width: 120px;
+    height: 200px;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.website-preview {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.website-preview.tourism {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.website-preview.tourism::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(90deg, #333 0%, #666 50%, #333 100%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+.website-preview.personal-color {
+    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+}
+
+.website-header h3 {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+.dates {
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.color-people {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.person {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.person-1 { background: linear-gradient(45deg, #ff6b6b, #ff8e8e); }
+.person-2 { background: linear-gradient(45deg, #4ecdc4, #6ee7df); }
+.person-3 { background: linear-gradient(45deg, #a8e6cf, #dcedc1); }
+
+.diagnosis-btn {
+    background: #fff;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.project-details {
+    flex: 1;
+    text-align: left;
+    min-width: 0;
+}
+
+.project-title {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    color: #333;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.project-client {
+    font-size: 20px;
+    margin: 0 0 25px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+.technologies {
+    margin-bottom: 25px;
+}
+
+.tech-label {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.view-project {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, lightcoral, lightblue);
+    background-size: 200% auto;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.view-project:hover {
+    background-position: right center;
+    transform: scale(1.05);
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+.decoration {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    z-index: 10;
+}
+
+.decoration.rocket {
+    right: -30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.decoration.lightning {
+    right: -25px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(10px); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.7; transform: translateY(-50%) scale(1.1); }
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+    }
+    
+    .project-visual {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .project-image {
+        width: 100%;
+        max-width: 380px;
+        height: 350px;
+    }
+    
+    .project-title {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-title {
+        font-size: 40px;
+        padding: 40px 0;
+    }
+    
+    .project-card {
+        padding: 20px 15px;
+        margin-bottom: 40px;
+    }
+    
+    .project-image {
+        width: 100%;
+        max-width: 310px;
+        height: 280px;
+    }
+    
+    .project-title {
+        font-size: 18px;
+    }
+    
+    .project-client {
+        font-size: 16px;
+    }
+}
+
+/* ソーシャルアイコンの表示制御 */
+.social-icons-pc {
+    display: block;
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
+}
+
+.twitter-icon {
+    color: white;
+    display: none;
+}
+
+/* Additional Links Section */
+.additional-links {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.graphic-video-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, lightcoral, lightblue);
+    background-size: 200% auto;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.graphic-video-button:hover {
+    background-position: right center;
+    transform: scale(1.05);
+}
+</style> 
