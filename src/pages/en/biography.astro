@@ -41,23 +41,28 @@ const t = useTranslations(lang);
     <h2 class="name fade-up">{t('name')}</h2>
 
     <div class="profile-container fade-up">
+
       <ul class="profile-list">
-        {(t('profile') as string[]).map((item, index) => {
-          console.log('Item:', item, 'Index:', index, 'Type:', typeof item, 'Length:', item.length);
-          if (item === '') {
-            console.log('Empty item detected');
-            return <li class="section-spacer"></li>;
-          } else if (item === 'SKILLS') {
-            console.log('SKILLS detected');
-            return <li class="section-title">{item}</li>;
-          } else if (item === 'DESIGN TOOLS:' || item === 'LANGUAGES:' || item === 'FRAMEWORKS & LIBRARIES:') {
-            console.log('Section title detected:', item);
-            return <li class="section-title">{item}</li>;
-          } else {
-            console.log('Regular item:', item);
-            return <li class="profile-item">{item}</li>;
-          }
-        })}
+        <li class="profile-item">Born on December 12, 1996, in Higashi-Osaka City, Osaka Prefecture</li>
+        <li class="profile-item">2013 Studied abroad in New Zealand during high school</li>
+        <li class="profile-item">2016 Established Airline Project. Next year marks the 10th anniversary of its founding.</li>
+        <li class="profile-item">2018 Achieved New Zealand traverse</li>
+        <li class="profile-item">2019 Achieved China mainland traverse by hitchhiking with 20,000 yen budget</li>
+        <li class="profile-item">2020 Graduated from Kyoto University of Foreign Studies, Faculty of Foreign Languages, Chinese Language Department</li>
+        <li class="profile-item">2020 Joined ANA Kansai Airport Co., Ltd.</li>
+        <li class="profile-item">2021 Graduated from Seed Teach School online</li>
+        <li class="profile-item">2022 Moved to Tokyo to expand activities not only in Japan but also overseas.</li>
+        <li class="profile-item">2022 Gained practical experience as a designer starting from part-time work.</li>
+        <li class="profile-item">2024 Gained practical experience as a UI/UX designer. Currently training as an engineer.</li>
+        <li class="profile-item">2025 Independent as a UI/UX designer</li>
+        <br>
+        <li class="profile-item skills-title">SKILLS</li>
+        <li class="profile-item">【DESIGN TOOLS:】</li>
+        <li class="profile-item">Figma, Sketch, Adobe XD, Adobe Illustrator, Adobe Photoshop, Adobe InDesign, Adobe Premiere Pro, Adobe After Effects, Git, GitHub, Docker, Vercel</li>
+        <li class="profile-item">【LANGUAGES:】</li>
+        <li class="profile-item">HTML, CSS, JavaScript, TypeScript, SQL</li>
+        <li class="profile-item">【FRAMEWORKS & LIBRARIES:】</li>
+        <li class="profile-item">React, Next.js, Astro</li>
       </ul>
     </div>
   </main>
@@ -116,6 +121,14 @@ const t = useTranslations(lang);
     line-height: 1.6;
 }
 
+.skills-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .section-title {
     font-size: 24px;
     font-weight: bold;
@@ -128,6 +141,20 @@ const t = useTranslations(lang);
 .section-spacer {
     height: 20px;
     list-style: none;
+}
+
+.debug-info {
+    background: #f0f0f0;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #333;
+}
+
+.debug-info p {
+    margin: 5px 0;
 }
 .fade-up {
     opacity: 0;
