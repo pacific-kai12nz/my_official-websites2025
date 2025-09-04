@@ -5,8 +5,8 @@ import "swiper/css/pagination";
 
 const works = [
   { src: "/images/ANOTHER-SKY-in-NZ.jpg", title: "WORK1", link: "/topicks" },
-  { src: "/images/important.png", title: "WORK2", link: "/topicks2" },
-  { src: "/images/branding.jpg", title: "WORK3", link: "/topicks3" },
+  { src: "/images/comigsoon.jpg", title: "WORK2", link: "works/work2" },
+  { src: "/images/comigsoon.jpg", title: "WORK3", link: "works/work3" },
   { src: "/images/comigsoon.jpg", title: "WORK4", link: "/works/work4" },
 ];
 
