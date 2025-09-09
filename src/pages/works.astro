@@ -30,14 +30,40 @@ const t = useTranslations(lang);
         </section>
 
         <section id="works-container">
+                        <!-- Personal Color診断サイト プロジェクト -->
+                        <div class="project-card">
+                            <div class="project-visual">
+                                <img src="/images/personal colour-woks.png" alt="Personal Color診断サイト" class="project-image">
+                            </div>
+                            <div class="project-details">
+                                <div class="category">
+                                    <span class="category-tag uiux-category">UI/UX</span>
+                                </div>
+                                <h2 class="project-title">Personal Color診断サイト</h2>
+                                
+                                <p class="project-client">個人開発 WEBアプリ</p>
+                                <div class="technologies">
+                                    <span class="tech-label">Skills:</span>
+                                    <span class="tech-tag">Next.js</span>
+                                    <span class="tech-tag">face-api</span>
+                                    <span class="tech-tag">Figma</span>
+                                    <span class="tech-tag">Adobe Illustrator</span>
+                                </div>
+                                <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                                <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
+                            </div>
+                        </div>
             <!-- Tourism Crossover Summit 2025 Project -->
             <div class="project-card">
                 <div class="project-visual">
                     <img src="/images/expo-works.png" alt="観光クロスオーバーサミット2025" class="project-image">
                 </div>
                 <div class="project-details">
-                    <h2 class="project-title">【LP】観光クロスオーバーサミット2025 in 関西・大阪万博</h2>
-                    <p class="project-client">観光クロスオーバー協会</p>
+                    <div class="category">
+                        <span class="category-tag web-category">Webサイト</span>
+                    </div>
+                    <h2 class="project-title">観光クロスオーバーサミット2025 in 関西・大阪万博</h2>
+                    <p class="project-client">観光クロスオーバー協会 LPサイト</p>
                     <div class="technologies">
                         <span class="tech-label">Skills:</span>
                         <span class="tech-tag">Astro</span>
@@ -48,32 +74,15 @@ const t = useTranslations(lang);
                     <p class="disclaimer">※PJ都合でプレビュー環境に遷移します</p>
                 </div>
             </div>
-
-            <!-- Personal Color診断サイト プロジェクト -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/personal colour-woks.png" alt="Personal Color診断サイト" class="project-image">
-                </div>
-                <div class="project-details">
-                    <h2 class="project-title">Personal Color診断サイト</h2>
-                    <p class="project-client">個人開発</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">face-api</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                    </div>
-                    <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                </div>
-            </div>
-
                         <!-- アイヤラもみほぐし整体企業サイト プロジェクト -->
             <div class="project-card">
                 <div class="project-visual">
                     <img src="/images/aiyara-works.png" alt="Personal Color診断サイト" class="project-image">
                 </div>
                 <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag web-category">Webサイト</span>
+                    </div>
                     <h2 class="project-title">Iyara relaxation salon 【アイヤラもみほぐし整体】</h2>
                     <p class="project-client">企業サイト</p>
                     <div class="technologies">
@@ -92,7 +101,10 @@ const t = useTranslations(lang);
                     <img src="/images/airline-works.png" alt="Personal Color診断サイト" class="project-image">
                 </div>
                 <div class="project-details">
-                    <h2 class="project-title">京都外大Airline Project 10周年サイト</h2>
+                    <div class="category">
+                        <span class="category-tag web-category">Webサイト</span>
+                    </div>
+                    <h2 class="project-title">京都外大Airline Project 10周年記念サイト</h2>
                     <p class="project-client">紹介サイト</p>
                     <div class="technologies">
                         <span class="tech-label">Skills:</span>
@@ -314,19 +326,53 @@ body {
     font-weight: 500;
 }
 
+/* Category tag styles */
+.category {
+    margin-bottom: 15px;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* UI/UXカテゴリのスタイル - 青紫のグラデーション */
+.uiux-category {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Webカテゴリのスタイル - 赤とオレンジのグラデーション */
+.web-category {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
 .view-project {
     display: inline-block;
     margin: 10px 0;
+    margin-left: 10px;
     padding: 10px 20px;
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 50px;
     background: linear-gradient(to right, lightcoral, lightblue);
     background-size: 200% auto;
     transition: 0.5s;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(114, 78, 78, 0.3);
+}
+
+.view-project:first-child {
+    margin-left: 0;
 }
 
 .view-project:hover {
