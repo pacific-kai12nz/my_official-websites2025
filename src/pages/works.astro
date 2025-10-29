@@ -38,6 +38,7 @@ const t = useTranslations(lang);
                             <div class="project-details">
                                 <div class="category">
                                     <span class="category-tag uiux-category">UI/UX</span>
+                                    <span class="category-tag webapp-category">Webアプリ</span>
                                 </div>
                                 <h2 class="project-title">Personal Color診断サイト</h2>
                                 
@@ -107,7 +108,7 @@ const t = useTranslations(lang);
                     <p class="project-client">爆速AI LAB 企業LPサイト</p>
                     <div class="technologies">
                         <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Astro</span>
+                        <span class="tech-tag">Astro.js</span>
                         <span class="tech-tag">Figma</span>
                         <span class="tech-tag">Adobe Illustrator</span>
                     </div>
@@ -127,7 +128,7 @@ const t = useTranslations(lang);
                     <p class="project-client">観光クロスオーバー協会 LPサイト</p>
                     <div class="technologies">
                         <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Astro</span>
+                        <span class="tech-tag">Astro.js</span>
                         <span class="tech-tag">Figma</span>
                         <span class="tech-tag">Adobe Illustrator</span>
                     </div>
@@ -236,6 +237,7 @@ body {
     gap: 20px;
     align-items: center;
     flex-shrink: 0;
+    width: auto;
 }
 
 .project-image {
@@ -390,6 +392,9 @@ body {
 /* Category tag styles */
 .category {
     margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .category-tag {
@@ -421,6 +426,13 @@ body {
     background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
     color: white;
     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+/* Webアプリカテゴリのスタイル - ブルーとミントのグラデーション */
+.webapp-category {
+    background: linear-gradient(135deg, #4fc3f7 0%, #81c784 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(79, 195, 247, 0.3);
 }
 
 .view-project {
@@ -485,25 +497,56 @@ body {
 
 /* レスポンシブデザイン */
 @media screen and (max-width: 768px) {
+    #works-container {
+        padding: 0 15px;
+    }
+    
     .project-card {
         flex-direction: column;
         padding: 30px 20px;
         gap: 30px;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
     }
     
     .project-visual {
         flex-direction: column;
         gap: 15px;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
     
     .project-image {
         width: 100%;
         max-width: 380px;
         height: 350px;
+        margin: 0;
+    }
+    
+    .project-details {
+        width: 100%;
+        text-align: left;
+        max-width: 600px;
     }
     
     .project-title {
         font-size: 24px;
+        text-align: left;
+    }
+    
+    .project-client {
+        text-align: left;
+    }
+    
+    .technologies {
+        text-align: left;
+    }
+    
+    .view-project {
+        display: inline-block;
+        margin: 5px 5px 5px 0;
     }
 }
 
@@ -513,23 +556,67 @@ body {
         padding: 40px 0;
     }
     
+    #works-container {
+        padding: 0 10px;
+    }
+    
     .project-card {
         padding: 20px 15px;
         margin-bottom: 40px;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .project-visual {
+        width: 100%;
+        align-items: flex-start;
     }
     
     .project-image {
         width: 100%;
-        max-width: 310px;
-        height: 280px;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        margin: 0;
+    }
+    
+    .project-details {
+        width: 100%;
+        text-align: left;
     }
     
     .project-title {
         font-size: 18px;
+        text-align: left;
     }
     
     .project-client {
         font-size: 16px;
+        text-align: left;
+    }
+    
+    .technologies {
+        text-align: left;
+    }
+    
+    .tech-tag {
+        font-size: 14px;
+        padding: 6px 12px;
+        margin: 4px 4px 4px 0;
+    }
+    
+    .view-project {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        font-size: 14px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .view-project:first-child {
+        margin-left: 0;
     }
 }
 
