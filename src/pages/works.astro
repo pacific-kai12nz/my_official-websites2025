@@ -29,32 +29,43 @@ const t = useTranslations(lang);
             <h1 class="page-title">WORKS</h1>
         </section>
 
-        <section id="works-container">
-                        <!-- Personal Color診断サイト プロジェクト -->
-                        <div class="project-card">
-                            <div class="project-visual">
-                                <img src="/images/personal colour-woks.png" alt="Personal Color診断サイト" class="project-image">
-                            </div>
-                            <div class="project-details">
-                                <div class="category">
-                                    <span class="category-tag uiux-category">UI/UX</span>
-                                    <span class="category-tag webapp-category">Webアプリ</span>
-                                </div>
-                                <h2 class="project-title">Personal Color診断サイト</h2>
-                                
-                                <p class="project-client">個人開発 WEBアプリ</p>
-                                <div class="technologies">
-                                    <span class="tech-label">Skills:</span>
-                                    <span class="tech-tag">Next.js</span>
-                                    <span class="tech-tag">face-api</span>
-                                    <span class="tech-tag">Figma</span>
-                                    <span class="tech-tag">Adobe Illustrator</span>
-                                </div>
-                                <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                                <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
-                            </div>
-                        </div>
-            <!-- Tokyo Game Show 2025 Project -->
+        <!-- Tab Navigation -->
+        <section class="tab-navigation">
+            <button class="tab-button active" data-tab="all">ALL</button>
+            <button class="tab-button" data-tab="web">Programmer</button>
+            <button class="tab-button" data-tab="uiux">UI/UX Design</button>
+            <button class="tab-button" data-tab="graphic">Graphic Design</button>
+            <button class="tab-button" data-tab="video-p">Video Production</button>
+        </section>
+
+        <!-- ALL Tab -->
+        <section id="all" class="tab-content active">
+            <div class="works-container">
+
+            <!-- Personal Color診断サイト プロジェクト -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/personal colour-woks.png" alt="Personal Color診断サイト" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag uiux-category">UI/UX</span>
+                        <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Personal Color診断サイト</h2>
+                    <p class="project-client">個人開発</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">face-api</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
+                </div>
+            </div>
+            <!-- Tokyo Game show 2025 -->
             <div class="project-card">
                 <div class="project-visual">
                     <img src="/images/Tokyo game show 2025.png" alt="Tokyo Game Show 2025" class="project-image">
@@ -81,11 +92,11 @@ const t = useTranslations(lang);
                 </div>
                 <div class="project-details">
                     <div class="category">
-                        <span class="category-tag web-category">Webサイト</span>
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
                     </div>
-        <h2 class="project-title">株式会社BLUE CANVAS</h2>
-
-        <p class="project-client">企業サイト</p>
+                    <h2 class="project-title">株式会社BLUE CANVAS</h2>
+                    <p class="project-client">企業サイト</p>
                     <div class="technologies">
                         <span class="tech-label">Skills:</span>
                         <span class="tech-tag">Next.js</span>
@@ -102,7 +113,8 @@ const t = useTranslations(lang);
                 </div>
                 <div class="project-details">
                     <div class="category">
-                        <span class="category-tag web-category">Webサイト</span>
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
                     </div>
                     <h2 class="project-title">爆速AI LAB</h2>
                     <p class="project-client">爆速AI LAB 企業LPサイト</p>
@@ -122,10 +134,11 @@ const t = useTranslations(lang);
                 </div>
                 <div class="project-details">
                     <div class="category">
-                        <span class="category-tag web-category">Webサイト</span>
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
                     </div>
                     <h2 class="project-title">観光クロスオーバーサミット2025 in 関西・大阪万博</h2>
-                    <p class="project-client">観光クロスオーバー協会 LPサイト</p>
+                    <p class="project-client">観光クロスオーバー協会 企業LPサイト</p>
                     <div class="technologies">
                         <span class="tech-label">Skills:</span>
                         <span class="tech-tag">Astro.js</span>
@@ -136,14 +149,15 @@ const t = useTranslations(lang);
                     <p class="disclaimer">※PJ都合でプレビュー環境に遷移します</p>
                 </div>
             </div>
-                        <!-- アイヤラもみほぐし整体企業サイト プロジェクト -->
+            <!-- Iyara Relaxation Salon Project -->
             <div class="project-card">
                 <div class="project-visual">
-                    <img src="/images/aiyara-works.png" alt="Personal Color診断サイト" class="project-image">
+                    <img src="/images/aiyara-works.png" alt="アイヤラもみほぐし整体" class="project-image">
                 </div>
                 <div class="project-details">
                     <div class="category">
-                        <span class="category-tag web-category">Webサイト</span>
+                        <span class="category-tag web-category">web</span>
+                        <span class="category-tag design-category">Design</span>
                     </div>
                     <h2 class="project-title">Iyara relaxation salon 【アイヤラもみほぐし整体】</h2>
                     <p class="project-client">企業サイト</p>
@@ -157,17 +171,18 @@ const t = useTranslations(lang);
                     <a href="https://iyara2980.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
                 </div>
             </div>
-            <!-- 京都外大Airline Project 10周年サイト プロジェクト -->
+            <!-- Kyoto University of Foreign Studies Airline Project 10th Anniversary Site -->
             <div class="project-card">
                 <div class="project-visual">
-                    <img src="/images/airline-works.png" alt="Personal Color診断サイト" class="project-image">
+                    <img src="/images/airline-works.png" alt="京都外大Airline Project" class="project-image">
                 </div>
                 <div class="project-details">
                     <div class="category">
-                        <span class="category-tag web-category">Webサイト</span>
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
                     </div>
                     <h2 class="project-title">京都外大Airline Project 10周年記念サイト</h2>
-                    <p class="project-client">紹介サイト</p>
+                    <p class="project-client">紹介サイト WEBデザイン</p>
                     <div class="technologies">
                         <span class="tech-label">Skills:</span>
                         <span class="tech-tag">Figma</span>
@@ -179,10 +194,207 @@ const t = useTranslations(lang);
                     <p class="disclaimer">※PJ都合でデザインのみに遷移します</p>
                 </div>
             </div>
+            <!-- Additional Link for More Graphic Work -->
+            <div class="additional-links">
+                <a href="https://www.foriio.com/kaipora12nz" target="_blank" rel="noopener noreferrer" class="graphic-video-button">
+                    More Graphic Design & Videographer Works
+                </a>
+            </div>
+            </div>
         </section>
 
-        <!-- Graphic Design & Videographer Section -->
-        <section class="additional-links">
+        
+        <!-- Web Development Tab -->
+        <section id="web" class="tab-content">
+            <div class="works-container">
+            </div>
+        </section>
+
+
+        <!-- UI/UX Design Tab -->
+        <section id="uiux" class="tab-content">
+            <div class="works-container">
+                <!-- Personal Color診断サイト プロジェクト -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/personal colour-woks.png" alt="Personal Color診断サイト" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag uiux-category">UI/UX</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Personal Color診断サイト</h2>
+                        <p class="project-client">個人開発</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">face-api</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
+                    </div>
+                </div>
+
+                <!-- BLUE CANVAS.inc Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/bluecanvas-works.png" alt="BLUE CANVAS.inc" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">株式会社BLUE CANVAS</h2>
+                        <p class="project-client">企業サイト</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <a href="https://bc-hp.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+
+                <!-- Bakusoku AI LAB -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/bakusokuailab-works.png" alt="爆速AI LAB" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">爆速AI LAB</h2>
+                        <p class="project-client">爆速AI LAB 企業LPサイト</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Astro.js</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://bakusoku.ailaboratory.net" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+
+                <!-- Tourism Crossover Summit 2025 Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/expo-works.png" alt="観光クロスオーバーサミット2025" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">観光クロスオーバーサミット2025 in 関西・大阪万博</h2>
+                        <p class="project-client">観光クロスオーバー協会 LPサイト</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Astro.js</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://kankou-xoversummit2025.pages.dev/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <p class="disclaimer">※PJ都合でプレビュー環境に遷移します</p>
+                    </div>
+                </div>
+
+                <!-- Iyara Relaxation Salon Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/aiyara-works.png" alt="アイヤラもみほぐし整体" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Iyara relaxation salon 【アイヤラもみほぐし整体】</h2>
+                        <p class="project-client">企業サイト</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Adobe XD</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://iyara2980.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+
+                <!-- Kyoto University of Foreign Studies Airline Project 10th Anniversary Site -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/airline-works.png" alt="京都外大Airline Project" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">京都外大Airline Project 10周年記念サイト</h2>
+                        <p class="project-client">紹介サイト WEBデザイン</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe XD</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                        <a href="https://www.figma.com/design/dnIphAaSjJK5r8RJa7tIXc/airline-project10th2025?node-id=1-2&t=OX9QqKfUdjlUxy8F-1" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <p class="disclaimer">※PJ都合でデザインのみに遷移します</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Graphic Design Tab -->
+        <section id="graphic" class="tab-content">
+            <div class="works-container">
+                <!-- Tokyo Game Show 2025 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/Tokyo game show 2025.png" alt="Tokyo Game Show 2025" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag graphic-category">Graphic</span>
+                            <span class="category-tag poster-category">Poster</span>
+                        </div>
+                        <h2 class="project-title">Tokyo Game Show 2025 ミチシルベ</h2>
+                        <p class="project-client">ゲームポスターデザイン</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                        <a href="https://x.com/theoriacode/status/1970875317746369002?s=46&t=czhe1ls4r4vSS358wJK3cA" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <a href="https://www.foriio.com/works/1930493" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Link for More Graphic Work -->
+            <div class="additional-links">
+            <a href="https://www.foriio.com/kaipora12nz" target="_blank" rel="noopener noreferrer" class="graphic-video-button">
+                Graphic Designer / Videographer
+            </a>
+        </section>
+
+
+            <!-- Video Production Tab -->
+        <section id="video-p" class="tab-content">
+            <div class="works-container">
+            </div>
+            
+            <!-- Additional Link for More Graphic Work -->
+            <div class="additional-links">
             <a href="https://www.foriio.com/kaipora12nz" target="_blank" rel="noopener noreferrer" class="graphic-video-button">
                 Graphic Designer / Videographer
             </a>
@@ -192,6 +404,34 @@ const t = useTranslations(lang);
     <SocialIcons2 />
     <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
     <Footer></Footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+
+                    // Null check for TypeScript
+                    if (!targetTab) return;
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    const targetContent = document.getElementById(targetTab);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
@@ -208,16 +448,85 @@ body {
 .page-title {
     text-align: center;
     font-size: 50px;
-    padding: 60px 0;
+    padding: 60px 0 30px 0;
     margin-top: 50px;
     color: #333;
     text-shadow: none;
 }
 
-#works-container {
+/* Tab Navigation Styles - Browser Tab Design */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 40px auto 60px;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.tab-button {
+    padding: 16px 35px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    background: #e8e8e8;
+    color: #666;
+    border: none;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tab-button:hover {
+    background: #d5d5d5;
+    color: #333;
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: white;
+    color: #333;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #ff6b6b;
+}
+
+.tab-button.active::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.works-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 40px 20px;
 }
 
 .project-card {
@@ -407,32 +716,64 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* UI/UXカテゴリのスタイル - 青紫のグラデーション */
 .uiux-category {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
 }
 
-/* Graphicカテゴリのスタイル - 緑のグラデーション */
 .graphic-category {
     background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
     color: white;
     box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
 }
 
-/* Webカテゴリのスタイル - 赤とオレンジのグラデーション */
 .web-category {
     background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
     color: white;
     box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
 }
 
-/* Webアプリカテゴリのスタイル - ブルーとパープルのグラデーション */
 .webapp-category {
     background: linear-gradient(135deg, #0ea5e9 0%, #c084fc 100%);
     color: white;
     box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+}
+
+.ai-category {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+}
+
+.design-category {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.poster-category {
+    background: linear-gradient(135deg, #bef264 0%, #a3e635 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(132, 204, 22, 0.3);
+}
+
+.corporate-category {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+.lp-category {
+    background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);
+}
+
+.wordpress-category {
+    background: linear-gradient(135deg, #21759b 0%, #0073aa 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(33, 117, 155, 0.3);
 }
 
 .view-project {
@@ -444,11 +785,11 @@ body {
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 25px;
     background: linear-gradient(to right, lightcoral, lightblue);
     background-size: 200% auto;
     transition: 0.5s;
-    box-shadow: 0 4px 8px rgba(114, 78, 78, 0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .view-project:first-child {
@@ -497,8 +838,38 @@ body {
 
 /* レスポンシブデザイン */
 @media screen and (max-width: 768px) {
-    #works-container {
-        padding: 0 15px;
+    .page-title {
+        font-size: 40px;
+        padding: 40px 0 20px 0;
+    }
+
+    .tab-navigation {
+        gap: 6px;
+        margin: 20px 15px 40px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 10px 10px;
+        scrollbar-width: thin;
+    }
+
+    .tab-navigation::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .tab-navigation::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 2px;
+    }
+
+    .tab-button {
+        padding: 14px 25px;
+        font-size: 15px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .works-container {
+        padding: 20px 15px;
     }
     
     .project-card {
@@ -552,12 +923,23 @@ body {
 
 @media screen and (max-width: 480px) {
     .page-title {
-        font-size: 40px;
-        padding: 40px 0;
+        font-size: 36px;
+        padding: 30px 0 15px 0;
     }
-    
-    #works-container {
-        padding: 0 10px;
+
+    .tab-navigation {
+        margin: 15px 10px 30px;
+        gap: 5px;
+        padding: 0 5px 8px;
+    }
+
+    .tab-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .works-container {
+        padding: 15px 10px;
     }
     
     .project-card {
@@ -669,4 +1051,4 @@ body {
     background-position: right center;
     transform: scale(1.05);
 }
-</style> 
+</style>
