@@ -1,0 +1,193 @@
+---
+import "../styles/global.css";
+import Header from "../layouts/Header.astro";
+import Footer from "../layouts/Footer.astro";
+import SocialIcons from "../components/SocialIcons.astro";
+import SocialIcons2 from "../components/SocialIcons2.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import LanguageToggle from "../components/LanguageToggle.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PICK UP TOPICKS</title>
+  </head>
+
+  <body>
+    <Header />
+    <LanguageToggle />
+    <main>
+      <section id="title">
+        <h1 class="page-title">PICK UP TOPICKS</h1>
+      </section>
+
+      <div class="container">
+        <div class="news-title"><em class="new-badge">NEW</em>
+             ゼロクリとWondastonを立ち上げました！</div>
+        <div class="news-date">2025.06.30 NEWS</div>
+        <img class="feature-image" src="/images/comigsoon.jpg" alt="Feature Image" />
+        <div class="news-content">
+          <p>
+            この度、ZERO CREATION(ゼロクリ)というコミュニティを立ち上げて、Wondastonというフリーランスチームを結成しました。<br />
+            「やってみたい」を、諦めないで。ゼロからでも、クリエイターになれる。はじめの一歩を、ゼロクリで。<br />
+            【現在の部門】<br />
+            エンジニア<br />
+            デザイナー<br />
+            動画クリエイター<br />
+            フォトグラファー<br />  
+            その他クリエイティブがあります！<br />
+            なんだって挑戦していい。未経験から始めた仲間もたくさん！夢は目標をかなえる力だ。やりたいをかなえる！ゼロクリは、「夢をカタチにしたい人」のためのコミュニティサークルです。カタチにできるようにサポートもします！<br /> 
+            国内だけでなく世界中のクリエイター仲間とつながれる！横のつながりが広げる事ができる！<br />
+            場所は提供します！あとはどう活かすかは自分次第！本気でなりたい人！やる気ある人！待ってます！メンバーは随時募集中です！<br />
+          </p>
+          <br />
+          <p>
+            ■公式Instagram<br />
+            <a href="https://www.instagram.com/01zero.creation" class="animated-button">こちらまで</a>
+          </p>
+          <p>
+            ■公式 X<br />
+            <a href="https://x.com/01_zerocreation" class="animated-button">こちらまで</a>
+          </p>
+        </div>
+      </div>
+    </main>
+        <SocialIcons2 />
+    <Footer />
+    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+  </body>
+</html>
+
+<style>
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(#f5f0f6, #f9f5f7);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+}
+
+.news-title {
+    font-size: 24px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.new-badge {
+    background: linear-gradient(45deg, #ff4757, #ff3742);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 16px rgba(255, 71, 87, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    }
+}
+
+.news-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+img.feature-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.news-content {
+    line-height: 1.8;
+}
+
+.link-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-section a:hover {
+    text-decoration: underline;
+}
+
+.animated-button {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, lightcoral, lightblue);
+  background-size: 200% auto;
+  transition: 0.5s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.animated-button:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+
+.twitter-icon {
+    color: white;
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
+}
+
+</style>

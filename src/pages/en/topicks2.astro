@@ -1,0 +1,191 @@
+---
+import "../../styles/global.css";
+import Header from "../../layouts/Header.astro";
+import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { getLangFromUrl, useTranslations } from '../../i18n/ui';
+import LanguageToggle from "../../components/LanguageToggle.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PICK UP TOPICS</title>
+  </head>
+
+  <body>
+    <Header />
+    <LanguageToggle />
+    <main>
+      <section id="title">
+        <h1 class="page-title">PICK UP TOPICS</h1>
+      </section>
+
+      <div class="container">
+        <div class="news-title"><em class="new-badge">NEW</em> Important Announcement</div>
+        <div class="news-date">2025.04.20 NEWS</div>
+        <img class="feature-image" src="/images/comigsoon.jpg" alt="Feature Image" />
+        <div class="news-content">
+          <p>I would like to announce that I have officially started working independently as a UI/UX designer. Honestly, it was a very difficult and uncertain decision, but I am committed to helping clients bring their visions to life. Starting in 2025, I will challenge myself with new things one step at a time, even when they seem impossible. As this is the final year of my 20s, I want to face the future with no regrets, remain grateful to everyone who has supported me, and continue to work hard and grow. I am preparing for many new projects and hope to share more exciting updates with you soon. I aim to expand my activities not only in Japan but also globally. Please stay tuned for future announcements. For work inquiries, feel free to contact me via Instagram DM or through the contact form.</p>
+          <br />
+          <p>
+            ■ Official Instagram<br />
+            <a href="https://www.instagram.com/kaipora_12nz" class="animated-button">Click here</a>
+          </p>
+        </div>
+      </div>
+    </main>
+        <SocialIcons2 />
+        <Footer />
+    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+  </body>
+</html>
+
+<style>
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(#f5f0f6, #f9f5f7);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+}
+
+.news-title {
+    font-size: 24px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.new-badge {
+    background: linear-gradient(45deg, #ff4757, #ff3742);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 16px rgba(255, 71, 87, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    }
+}
+
+.news-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+img.feature-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.news-content {
+    line-height: 1.8;
+}
+
+.link-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-section a:hover {
+    text-decoration: underline;
+}
+
+.animated-button {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, lightcoral, lightblue);
+  background-size: 200% auto;
+  transition: 0.5s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.animated-button:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+
+.twitter-icon {
+    color: white;
+    display: none;
+}
+
+/* ソーシャルアイコンの表示制御 */
+.social-icons-pc {
+    display: block;
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+/* topicks2ページ専用のソーシャルアイコン色設定 */
+.social-icons-pc .social-icons a,
+.social-icons-mobile .social-icons a {
+    color: black !important;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
+}
+
+</style>
+

@@ -1,0 +1,121 @@
+---
+import { getLangFromUrl, languages } from '../i18n/ui';
+
+const currentLang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+const otherLangs = Object.entries(languages).filter(([lang]) => lang !== currentLang);
+---
+<div class="lang-dropdown-fixed" tabindex="0">
+  <button class="lang-main-btn">{languages[currentLang]}</button>
+  <div class="lang-dropdown-list">
+    {otherLangs.map(([lang, label]) => {
+      let href = currentPath;
+      // 日本語→英語
+      if (currentLang === 'ja' && lang === 'en') {
+        href = `/en${currentPath}`;
+      }
+      // 英語→日本語
+      else if (currentLang === 'en' && lang === 'ja') {
+        href = currentPath.replace(/^\/en/, '') || '/';
+      }
+      return (
+        <a href={href} class="lang-dropdown-item" hreflang={lang}>{label}</a>
+      );
+    })}
+  </div>
+</div>
+
+<style>
+.lang-dropdown-fixed {
+  position: fixed;
+  top: 100px;
+  right: 32px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.lang-main-btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 12px 22px;
+  font-size: 1.1rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  outline: none;
+  transition: background 0.2s, color 0.2s;
+  width: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+}
+.lang-dropdown-list {
+  opacity: 0;
+  visibility: hidden;
+  flex-direction: column;
+  margin-top: 4px;
+  min-width: 60px;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  border: 1px solid #ccc;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.lang-dropdown-fixed:hover .lang-dropdown-list,
+.lang-dropdown-fixed:focus-within .lang-dropdown-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-dropdown-item {
+  color: #111;
+  background: #fff;
+  padding: 12px 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+}
+.lang-dropdown-item:hover {
+  background: #111;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .lang-dropdown-fixed {
+    top: 70px;
+    right: 8px;
+  }
+  .lang-main-btn, .lang-dropdown-item {
+    font-size: 0.95rem;
+    padding: 8px 12px;
+  }
+  .lang-main-btn {
+    width: 50px;
+    height: 40px;
+  }
+  .lang-dropdown-item {
+    height: 40px;
+    padding: 8px 0;
+  }
+  .lang-dropdown-list {
+    min-width: 50px;
+  }
+}
+</style> 

@@ -1,0 +1,1138 @@
+---
+/* astro:async */
+import "../../styles/global.css";
+import Header from "../../layouts/Header.astro";
+import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { getLangFromUrl, useTranslations } from '../../i18n/ui';
+import LanguageToggle from "../../components/LanguageToggle.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<html lang={lang}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works</title>
+    <link rel="stylesheet" href="../../styles/global.css">
+</head>
+<body>
+    <Header></Header>
+    <LanguageToggle />
+    <main>
+        <section id="title">
+            <h1 class="page-title">WORKS</h1>
+        </section>
+
+        <!-- Tab Navigation -->
+        <section class="tab-navigation">
+            <button class="tab-button active" data-tab="all">ALL</button>
+            <button class="tab-button" data-tab="web">Programmer</button>
+            <button class="tab-button" data-tab="uiux">UI/UX Design</button>
+            <button class="tab-button" data-tab="graphic">Graphic Design</button>
+            <!-- <button class="tab-button" data-tab="video-p">Video Production</button> -->
+        </section>
+
+        <!-- ALL Tab -->
+        <section id="all" class="tab-content active">
+            <div class="works-container">
+
+<!-- Shinkou Electric Co., Ltd. 2026 -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/shinkou-top.png" alt="Shinkou Electric Co., Ltd." class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                    <span class="category-tag programmer-category">Programmer</span>
+                    <span class="category-tag web-category">web</span>
+                    <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Shinkou Electric Co., Ltd.</h2>
+                    <p class="project-client">Corporate Website</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Word Press</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Sass</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Java Script</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://shinkou-kohata.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+
+            <!-- Personal Color Diagnosis Site Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/personal colour-woks.png" alt="Personal Color Diagnosis Site" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag uiux-category">UI/UX</span>
+                        <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Personal Color Diagnosis Site</h2>
+                    <p class="project-client">Personal Development</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">face-api</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
+                </div>
+            </div>
+
+            <!-- Tokyo Game show 2025 -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/Tokyo game show 2025.png" alt="Tokyo Game Show 2025" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag graphic-category">Graphic</span>
+                    </div>
+                    <h2 class="project-title">Tokyo Game Show 2025 Michsirube</h2>
+                    <p class="project-client">Game Poster Design</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                        <span class="tech-tag">Adobe Photoshop</span>
+                    </div>
+                    <a href="https://x.com/theoriacode/status/1970875317746369002?s=46&t=czhe1ls4r4vSS358wJK3cA" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+
+            <!-- BLUE CANVAS.inc Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/bluecanvas-works.png" alt="BLUE CANVAS.inc" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">BLUE CANVAS.inc</h2>
+                    <p class="project-client">Corporate Website</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Figma</span>
+                    </div>
+                    <a href="https://bc-hp.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    <p class="disclaimer"></p>
+                </div>
+            </div>
+
+            <!-- Bakusoku AI LAB -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/bakusokuailab-works.png" alt="Bakusoku AI LAB" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Bakusoku AI LAB</h2>
+                    <p class="project-client">Bakusoku AI LAB Corporate LP Site</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Astro.js</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://bakusoku.ailaboratory.net" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+
+            <!-- Tourism Crossover Summit 2025 Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/expo-works.png" alt="Tourism Crossover Summit 2025" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Tourism Crossover Summit 2025 in Kansai/Osaka Expo</h2>
+                    <p class="project-client">Tourism Crossover Association Corporate LP Site</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Astro.js</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://kankou-xoversummit2025.pages.dev/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    <p class="disclaimer">*Due to project circumstances, it transitions to the preview environment</p>
+                </div>
+            </div>
+
+            <!-- Iyara Relaxation Salon Project -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/aiyara-works.png" alt="Iyara Relaxation Salon" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag web-category">web</span>
+                        <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Iyara Relaxation Salon</h2>
+                    <p class="project-client">Corporate Website</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">WordPress</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Adobe XD</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://iyara2980.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+
+            <!-- Kyoto University of Foreign Studies Airline Project 10th Anniversary Site -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/airline-works.png" alt="Airline Project 10th Anniversary Site" class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                        <span class="category-tag web-category">WEB</span>
+                        <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Kyoto University of Foreign Studies Airline Project 10th Anniversary Site</h2>
+                    <p class="project-client">Introduction Site WEB Design</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe XD</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                        <span class="tech-tag">Adobe Photoshop</span>
+                    </div>
+                    <a href="https://www.figma.com/design/dnIphAaSjJK5r8RJa7tIXc/airline-project10th2025?node-id=1-2&t=OX9QqKfUdjlUxy8F-1" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    <p class="disclaimer">*Due to project circumstances, it transitions to design only</p>
+                </div>
+            </div>
+
+            <!-- Additional Link for More Graphic Work -->
+            <div class="additional-links">
+                <a href="https://www.foriio.com/kaipora12nz" target="_blank" rel="noopener noreferrer" class="graphic-video-button">
+                    More Works & Video Productions
+                </a>
+            </div>
+            </div>
+        </section>
+
+
+
+        <!-- Programmer Tab -->
+        <section id="web" class="tab-content">
+            <div class="works-container">
+
+                <!-- Shinkou Electric Co., Ltd. 2026 -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/shinkou-top.png" alt="Shinkou Electric Co., Ltd." class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                    <span class="category-tag programmer-category">Programmer</span>
+                    <span class="category-tag web-category">web</span>
+                    <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Shinkou Electric Co., Ltd.</h2>
+                    <p class="project-client">Corporate Website</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Word Press</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Sass</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Java Script</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://shinkou-kohata.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+
+        <!-- UI/UX Design Tab -->
+        <section id="uiux" class="tab-content">
+            <div class="works-container">
+
+                <!-- Shinkou Electric Co., Ltd. 2026 -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/shinkou-top.png" alt="Shinkou Electric Co., Ltd." class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                    <span class="category-tag programmer-category">Programmer</span>
+                    <span class="category-tag web-category">web</span>
+                    <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Shinkou Electric Co., Ltd.</h2>
+                    <p class="project-client">Corporate Website</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Word Press</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Sass</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Java Script</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://shinkou-kohata.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+
+                <!-- Personal Color Diagnosis Site Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/personal colour-woks.png" alt="Personal Color Diagnosis Site" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag uiux-category">UI/UX</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Personal Color Diagnosis Site</h2>
+                        <p class="project-client">Personal Development</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">face-api</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
+                    </div>
+                </div>
+
+                <!-- BLUE CANVAS.inc Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/bluecanvas-works.png" alt="BLUE CANVAS.inc" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">BLUE CANVAS.inc</h2>
+                        <p class="project-client">Corporate Website</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Figma</span>
+                        </div>
+                        <a href="https://bc-hp.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+
+                <!-- Bakusoku AI LAB -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/bakusokuailab-works.png" alt="Bakusoku AI LAB" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Bakusoku AI LAB</h2>
+                        <p class="project-client">Bakusoku AI LAB Corporate LP Site</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Astro.js</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://bakusoku.ailaboratory.net" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+
+                <!-- Tourism Crossover Summit 2025 Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/expo-works.png" alt="Tourism Crossover Summit 2025" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Tourism Crossover Summit 2025 in Kansai/Osaka Expo</h2>
+                        <p class="project-client">Tourism Crossover Association LP Site</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Astro.js</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://kankou-xoversummit2025.pages.dev/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <p class="disclaimer">*Due to project circumstances, it transitions to the preview environment</p>
+                    </div>
+                </div>
+
+                <!-- Iyara Relaxation Salon Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/aiyara-works.png" alt="Iyara Relaxation Salon" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Iyara Relaxation Salon</h2>
+                        <p class="project-client">Corporate Website</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Adobe XD</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://iyara2980.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+
+                <!-- Kyoto University of Foreign Studies Airline Project 10th Anniversary Site -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/airline-works.png" alt="Airline Project 10th Anniversary Site" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Kyoto University of Foreign Studies Airline Project 10th Anniversary Site</h2>
+                        <p class="project-client">Introduction Site WEB Design</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Adobe XD</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                        <a href="https://www.figma.com/design/dnIphAaSjJK5r8RJa7tIXc/airline-project10th2025?node-id=1-2&t=OX9QqKfUdjlUxy8F-1" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <p class="disclaimer">*Due to project circumstances, it transitions to design only</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Graphic Design Tab -->
+        <section id="graphic" class="tab-content">
+            <div class="works-container">
+                <!-- Tokyo Game Show 2025 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/Tokyo game show 2025.png" alt="Tokyo Game Show 2025" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag graphic-category">Graphic</span>
+                            <span class="category-tag poster-category">Poster</span>
+                        </div>
+                        <h2 class="project-title">Tokyo Game Show 2025 Michishirube</h2>
+                        <p class="project-client">Game Poster Design</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                        <a href="https://x.com/theoriacode/status/1970875317746369002?s=46&t=czhe1ls4r4vSS358wJK3cA" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+            <!-- Video Production Tab -->
+        <!-- <section id="video-p" class="tab-content">
+            <div class="works-container">
+            </div>
+        </section> -->
+    </main>
+    
+    <SocialIcons2 />
+    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+    <Footer></Footer>
+
+    <script>
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+
+                    // Null check for TypeScript
+                    if (!targetTab) return;
+
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button and corresponding content
+                    button.classList.add('active');
+                    const targetContent = document.getElementById(targetTab);
+                    if (targetContent) {
+                        targetContent.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+<style>
+body {
+    font-family: 'Oswald', sans-serif;
+    background: white;
+    color: #333;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 50px;
+    padding: 60px 0 30px 0;
+    margin-top: 50px;
+    color: #333;
+    text-shadow: none;
+}
+
+/* Tab Navigation Styles - Browser Tab Design */
+.tab-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 40px auto 60px;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.tab-button {
+    padding: 16px 35px;
+    font-size: 17px;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    background: #e8e8e8;
+    color: #666;
+    border: none;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tab-button:hover {
+    background: #d5d5d5;
+    color: #333;
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: white;
+    color: #333;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #ff6b6b;
+}
+
+.tab-button.active::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b 0%, #ffa726 100%);
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.works-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.project-card {
+    margin-bottom: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    color: #333;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-visual {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-shrink: 0;
+    width: auto;
+}
+
+.project-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.device-mockup {
+    position: relative;
+}
+
+.device-mockup.laptop {
+    width: 300px;
+    height: 200px;
+}
+
+.device-mockup.mobile {
+    width: 120px;
+    height: 200px;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.website-preview {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.website-preview.tourism {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.website-preview.tourism::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(90deg, #333 0%, #666 50%, #333 100%);
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+.website-preview.personal-color {
+    background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
+}
+
+.website-header h3 {
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+.dates {
+    font-size: 12px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.color-people {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.person {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.person-1 { background: linear-gradient(45deg, #ff6b6b, #ff8e8e); }
+.person-2 { background: linear-gradient(45deg, #4ecdc4, #6ee7df); }
+.person-3 { background: linear-gradient(45deg, #a8e6cf, #dcedc1); }
+
+.diagnosis-btn {
+    background: #fff;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.project-details {
+    flex: 1;
+    text-align: left;
+    min-width: 0;
+}
+
+.project-title {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    color: #333;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+.project-client {
+    font-size: 20px;
+    margin: 0 0 25px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+.technologies {
+    margin-bottom: 25px;
+}
+
+.tech-label {
+    display: block;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Category tag styles */
+.category {
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.uiux-category {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.graphic-category {
+    background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+.web-category {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.webapp-category {
+    background: linear-gradient(135deg, #0ea5e9 0%, #c084fc 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+}
+
+.ai-category {
+    background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+}
+
+.programmer-category {
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+}
+
+.design-category {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+}
+
+.poster-category {
+    background: linear-gradient(135deg, #bef264 0%, #a3e635 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(132, 204, 22, 0.3);
+}
+
+.corporate-category {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.3);
+}
+
+.lp-category {
+    background: linear-gradient(135deg, #06b6d4 0%, #14b8a6 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);
+}
+
+.wordpress-category {
+    background: linear-gradient(135deg, #21759b 0%, #0073aa 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(33, 117, 155, 0.3);
+}
+
+.view-project {
+    display: inline-block;
+    margin: 10px 0;
+    margin-left: 10px;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, lightcoral, lightblue);
+    background-size: 200% auto;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.view-project:first-child {
+    margin-left: 0;
+}
+
+.view-project:hover {
+    background-position: right center;
+    transform: scale(1.05);
+}
+
+.disclaimer {
+    font-size: 12px;
+    color: #999;
+    margin: 0;
+}
+
+.decoration {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    z-index: 10;
+}
+
+.decoration.rocket {
+    right: -30px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.decoration.lightning {
+    right: -25px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(10px); }
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+    50% { opacity: 0.7; transform: translateY(-50%) scale(1.1); }
+}
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+    .page-title {
+        font-size: 40px;
+        padding: 40px 0 20px 0;
+    }
+
+    .tab-navigation {
+        gap: 6px;
+        margin: 20px 15px 40px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 10px 10px;
+        scrollbar-width: thin;
+    }
+
+    .tab-navigation::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .tab-navigation::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 2px;
+    }
+
+    .tab-button {
+        padding: 14px 25px;
+        font-size: 15px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .works-container {
+        padding: 20px 15px;
+    }
+    
+    .project-card {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 30px;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .project-visual {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    
+    .project-image {
+        width: 100%;
+        max-width: 380px;
+        height: 350px;
+        margin: 0;
+    }
+    
+    .project-details {
+        width: 100%;
+        text-align: left;
+        max-width: 600px;
+    }
+    
+    .project-title {
+        font-size: 24px;
+        text-align: left;
+    }
+    
+    .project-client {
+        text-align: left;
+    }
+    
+    .technologies {
+        text-align: left;
+    }
+    
+    .view-project {
+        display: inline-block;
+        margin: 5px 5px 5px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-title {
+        font-size: 36px;
+        padding: 30px 0 15px 0;
+    }
+
+    .tab-navigation {
+        margin: 15px 10px 30px;
+        gap: 5px;
+        padding: 0 5px 8px;
+    }
+
+    .tab-button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .works-container {
+        padding: 15px 10px;
+    }
+    
+    .project-card {
+        padding: 20px 15px;
+        margin-bottom: 40px;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .project-visual {
+        width: 100%;
+        align-items: flex-start;
+    }
+    
+    .project-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        margin: 0;
+    }
+    
+    .project-details {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .project-title {
+        font-size: 18px;
+        text-align: left;
+    }
+    
+    .project-client {
+        font-size: 16px;
+        text-align: left;
+    }
+    
+    .technologies {
+        text-align: left;
+    }
+    
+    .tech-tag {
+        font-size: 14px;
+        padding: 6px 12px;
+        margin: 4px 4px 4px 0;
+    }
+    
+    .view-project {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+        padding: 12px 20px;
+        font-size: 14px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    .view-project:first-child {
+        margin-left: 0;
+    }
+}
+
+/* ソーシャルアイコンの表示制御 */
+.social-icons-pc {
+    display: block;
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
+}
+
+.twitter-icon {
+    color: white;
+    display: none;
+}
+
+/* Additional Links Section */
+.additional-links {
+    text-align: center;
+    margin: 60px 0;
+}
+
+.graphic-video-button {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 15px 30px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, lightcoral, lightblue);
+    background-size: 200% auto;
+    transition: 0.5s;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.graphic-video-button:hover {
+    background-position: right center;
+    transform: scale(1.05);
+}
+</style> 

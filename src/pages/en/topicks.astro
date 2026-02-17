@@ -1,0 +1,196 @@
+---
+import "../../styles/global.css";
+import Header from "../../layouts/Header.astro";
+import Footer from "../../layouts/Footer.astro";
+import SocialIcons from "../../components/SocialIcons.astro";
+import SocialIcons2 from "../../components/SocialIcons2.astro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { getLangFromUrl, useTranslations } from '../../i18n/ui';
+import LanguageToggle from "../../components/LanguageToggle.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PICK UP TOPICS</title>
+  </head>
+
+  <body>
+    <Header />
+    <LanguageToggle />
+    <main>
+      <section id="title">
+        <h1 class="page-title">PICK UP TOPICS</h1>
+      </section>
+
+      <div class="container">
+        <div class="news-title"> Launched YouTube Channel!</div>
+        <!-- <em class="new-badge">NEW</em> -->
+        <div class="news-date">2025.03.15 NEWS</div>
+        <img class="feature-image" src="/images/ANOTHER-SKY-in-NZ.jpg" alt="Feature Image" />
+        <div class="news-content">
+          <p>This time, inspired by my favorite Japanese TV show 'Another Sky', I revisited my roots in New Zealand and reflected in an 'Another Sky style'. This is a complete reproduction and my own expression of returning to my roots. No comedy, no variety shows, fully serious with a mix of English and a little Japanese throughout. This is likely a one-time project. While filming, I felt embarrassed at times, but I tried my best to express my thoughts and feelings through trial and error. If you love or are interested in New Zealand, I would be very happy if you enjoy watching the video. Starting from 2025, I will do my best to express myself through video. Thank you for your support!</p>
+          <br />
+          <p>
+            ■ Watch the video here <br />
+            <a href="https://youtu.be/1HTSFoZo4Ws?si=pXuJ_gLS9aKFvcck" class="animated-button">Watch</a>
+          </p>
+
+          <p class="link-section">
+            ■ Official YouTube Channel <br />
+            <a href="https://www.youtube.com/@PacificKai_World" class="animated-button">Watch Other Videos</a>
+          </p>
+        </div>
+      </div>
+    </main>
+        <SocialIcons2 />
+        <Footer />
+    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+  </body>
+</html>
+<style>
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(#f5f0f6, #f9f5f7);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+}
+
+.news-title {
+    font-size: 24px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.new-badge {
+    background: linear-gradient(45deg, #ff4757, #ff3742);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 16px rgba(255, 71, 87, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
+    }
+}
+
+.news-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+img.feature-image {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.news-content {
+    line-height: 1.8;
+}
+
+.link-section a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-section a:hover {
+    text-decoration: underline;
+}
+
+.animated-button {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, lightcoral, lightblue);
+  background-size: 200% auto;
+  transition: 0.5s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.animated-button:hover {
+  background-position: right center;
+  transform: scale(1.05);
+}
+
+
+.twitter-icon {
+    color: white;
+    display: none;
+}
+
+/* ソーシャルアイコンの表示制御 */
+.social-icons-pc {
+    display: block;
+}
+
+.social-icons-mobile {
+    display: none;
+}
+
+/* topicksページ専用のソーシャルアイコン色設定 */
+.social-icons-pc .social-icons a,
+.social-icons-mobile .social-icons a {
+    color: black !important;
+}
+
+@media screen and (max-width: 768px) {
+    .social-icons-pc {
+        display: none;
+    }
+    
+    .social-icons-mobile {
+        display: block;
+    }
+}
+
+</style>
+
