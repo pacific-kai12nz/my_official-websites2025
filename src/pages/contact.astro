@@ -28,33 +28,10 @@ const t = useTranslations(lang);
             <h1 class="page-title">CONTACT</h1>
         </section>
 
-        <section id="contact-form">
-            <form action="https://formsubmit.co/your-email@example.com" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">お名前 <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="山田 太郎">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">メールアドレス <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="example@email.com">
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">件名</label>
-                    <input type="text" id="subject" name="subject" placeholder="お問い合わせの件名">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">メッセージ <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
-                </div>
-
-                <input type="hidden" name="_subject" value="ウェブサイトからのお問い合わせ">
-                <input type="hidden" name="_captcha" value="false">
-
-                <button type="submit" class="submit-btn">送信する</button>
-            </form>
+        <section id="works">
+            <!-- <button class="view-all" onclick="window.location.href='https://forms.gle/q4xSwoEFNzo9G48UA';"> -->
+                Contact Form
+            </button>
         </section>
     </main>
         <SocialIcons2 />
@@ -81,79 +58,41 @@ body {
     margin-top: 50px;
 }
 
-/* Contact Form */
-#contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px 40px 60px;
+#works {
+    display: flex;
+    align-items: center;
 }
 
-.contact-form {
-    text-align: left;
+#works h2 {
+    font-size: 50px;
+    margin-bottom: 20px; 
 }
 
-.form-group {
-    margin-bottom: 24px;
-}
-
-.form-group label {
+.view-all {
     display: block;
+    width: 180px;
+    margin: 10px auto; 
+    padding: 5px;
     font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-.required {
-    color: #e74c3c;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    font-size: 16px;
-    font-family: 'Oswald', sans-serif;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: lightcoral;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.submit-btn {
-    display: block;
-    width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    font-family: 'Oswald', sans-serif;
     color: white;
-    background: #000;
+    background: linear-gradient(to right, lightblue, lightcoral);
     border: none;
-    border-radius: 8px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
-    margin-top: 20px;
+    margin-top: 200px;
 }
-
-.submit-btn:hover {
-    transform: scale(1.02);
-    background: #333;
+.button-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
-
-.submit-btn:active {
-    transform: scale(0.98);
-    opacity: 0.9;
+.view-all:hover {
+    transform: scale(1.1); 
+    background: linear-gradient(to right, lightcoral, lightblue);
+}
+.view-all:active {
+    transform: scale(0.9);
+    opacity: 0.8;
 }
 
 html, body {
