@@ -31,214 +31,132 @@ const t = useTranslations(lang);
 
         <!-- Tab Navigation -->
         <section class="tab-navigation">
-            <button class="tab-button active" data-tab="all">ALL</button>
-            <button class="tab-button" data-tab="web">Programmer</button>
-            <button class="tab-button" data-tab="uiux">UI/UX Design</button>
-            <button class="tab-button" data-tab="graphic">Graphic Design</button>
-            <!-- <button class="tab-button" data-tab="video-p">Video Production</button> -->
+            <button class="tab-button active" data-tab="art">Art</button>
+            <button class="tab-button" data-tab="graphic">Graphic</button>
+            <button class="tab-button" data-tab="web">WEB</button>
+            <button class="tab-button" data-tab="uiux">UI/UX</button>
+            <button class="tab-button" data-tab="programmer">Programmer</button>
+            <button class="tab-button" data-tab="video">Video</button>
         </section>
 
-        <!-- ALL Tab -->
-        <section id="all" class="tab-content active">
+
+        <!-- Art Tab -->
+        <section id="art" class="tab-content">
             <div class="works-container">
-
-<!-- Shinkou Electric Co., Ltd. 2026 -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/shinkou-top.png" alt="Shinkou Electric Co., Ltd." class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                    <span class="category-tag programmer-category">Programmer</span>
-                    <span class="category-tag web-category">web</span>
-                    <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">Shinkou Electric Co., Ltd.</h2>
-                    <p class="project-client">Corporate Website</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Word Press</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">Sass</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">Java Script</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                    </div>
-                    <a href="https://shinkou-kohata.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                </div>
-            </div>
-
-            <!-- Personal Color Diagnosis Site Project -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/personal colour-woks.png" alt="Personal Color Diagnosis Site" class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                        <span class="category-tag uiux-category">UI/UX</span>
-                        <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">Personal Color Diagnosis Site</h2>
-                    <p class="project-client">Personal Development</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">face-api</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                    </div>
-                    <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                    <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
-                </div>
-            </div>
-
-            <!-- Tokyo Game show 2025 -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/Tokyo game show 2025.png" alt="Tokyo Game Show 2025" class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                        <span class="category-tag graphic-category">Graphic</span>
-                    </div>
-                    <h2 class="project-title">Tokyo Game Show 2025 Michsirube</h2>
-                    <p class="project-client">Game Poster Design</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                        <span class="tech-tag">Adobe Photoshop</span>
-                    </div>
-                    <a href="https://x.com/theoriacode/status/1970875317746369002?s=46&t=czhe1ls4r4vSS358wJK3cA" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                </div>
-            </div>
-
-            <!-- BLUE CANVAS.inc Project -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/bluecanvas-works.png" alt="BLUE CANVAS.inc" class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                        <span class="category-tag web-category">WEB</span>
-                        <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">BLUE CANVAS.inc</h2>
-                    <p class="project-client">Corporate Website</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">Figma</span>
-                    </div>
-                    <a href="https://bc-hp.netlify.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                    <p class="disclaimer"></p>
-                </div>
-            </div>
-
-            <!-- Bakusoku AI LAB -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/bakusokuailab-works.png" alt="Bakusoku AI LAB" class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                        <span class="category-tag web-category">WEB</span>
-                        <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">Bakusoku AI LAB</h2>
-                    <p class="project-client">Bakusoku AI LAB Corporate LP Site</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Astro.js</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                    </div>
-                    <a href="https://bakusoku.ailaboratory.net" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                </div>
-            </div>
-
-            <!-- Tourism Crossover Summit 2025 Project -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/expo-works.png" alt="Tourism Crossover Summit 2025" class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                        <span class="category-tag web-category">WEB</span>
-                        <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">Tourism Crossover Summit 2025 in Kansai/Osaka Expo</h2>
-                    <p class="project-client">Tourism Crossover Association Corporate LP Site</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Astro.js</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                    </div>
-                    <a href="https://kankou-xoversummit2025.pages.dev/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                    <p class="disclaimer">*Due to project circumstances, it transitions to the preview environment</p>
-                </div>
-            </div>
-
-            <!-- Iyara Relaxation Salon Project -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/aiyara-works.png" alt="Iyara Relaxation Salon" class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                        <span class="category-tag web-category">web</span>
-                        <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">Iyara Relaxation Salon</h2>
-                    <p class="project-client">Corporate Website</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">WordPress</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">Adobe XD</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                    </div>
-                    <a href="https://iyara2980.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                </div>
-            </div>
-
-            <!-- Kyoto University of Foreign Studies Airline Project 10th Anniversary Site -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/airline-works.png" alt="Airline Project 10th Anniversary Site" class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                        <span class="category-tag web-category">WEB</span>
-                        <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">Kyoto University of Foreign Studies Airline Project 10th Anniversary Site</h2>
-                    <p class="project-client">Introduction Site WEB Design</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe XD</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                        <span class="tech-tag">Adobe Photoshop</span>
-                    </div>
-                    <a href="https://www.figma.com/design/dnIphAaSjJK5r8RJa7tIXc/airline-project10th2025?node-id=1-2&t=OX9QqKfUdjlUxy8F-1" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                    <p class="disclaimer">*Due to project circumstances, it transitions to design only</p>
-                </div>
-            </div>
-
-            <!-- Additional Link for More Graphic Work -->
-            <div class="additional-links">
-                <a href="https://www.foriio.com/kaipora12nz" target="_blank" rel="noopener noreferrer" class="graphic-video-button">
-                    More Works & Video Productions
-                </a>
-            </div>
+                <!--  -->
             </div>
         </section>
 
 
 
-        <!-- Programmer Tab -->
+        <!-- Graphic Design Tab -->
+        <section id="graphic" class="tab-content">
+            <div class="works-container">
+                <!-- Tokyo Game Show 2025 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/Tokyo game show 2025.png" alt="Tokyo Game Show 2025" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag graphic-category">Graphic</span>
+                            <span class="category-tag poster-category">Poster</span>
+                        </div>
+                        <h2 class="project-title">Tokyo Game Show 2025 Michishirube</h2>
+                        <p class="project-client">Game Poster Design</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                        <a href="https://x.com/theoriacode/status/1970875317746369002?s=46&t=czhe1ls4r4vSS358wJK3cA" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+
+<!-- SE management -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/se-management-works.png" alt="SE-management" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag graphic-category">Graphic</span>
+                            <span class="category-tag poster-category">Brochure</span>
+                        </div>
+                        <h2 class="project-title">SE-management</h2>
+                        <p class="project-client">Company brochure Design</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kimagure mama -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/kimaguremama-works.png" alt="kimaguremama" class="project-image small-contain">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag graphic-category">Graphic</span>
+                            <span class="category-tag poster-category">Poster</span>
+                        </div>
+                        <h2 class="project-title">Kimagure Mama</h2>
+                        <p class="project-client">Poster Design</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jyume-na -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/jyumeina-works.jpg" alt="jyumeina" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag graphic-category">Graphic</span>
+                            <span class="category-tag poster-category">LOGO Design</span>
+                        </div>
+                        <h2 class="project-title">Jyume-na cleaning company</h2>
+                        <p class="project-client">Company LOGO Design</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promitech -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/promitech-works.png" alt="promitech" class="project-image small-contain">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag graphic-category">Graphic</span>
+                            <span class="category-tag poster-category">LOGO Design</span>
+                        </div>
+                        <h2 class="project-title">Promitech</h2>
+                        <p class="project-client">Company LOGO Design</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Adobe Photoshop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- WEB Design Tab -->
         <section id="web" class="tab-content">
             <div class="works-container">
 
@@ -249,9 +167,9 @@ const t = useTranslations(lang);
                 </div>
                 <div class="project-details">
                     <div class="category">
-                    <span class="category-tag programmer-category">Programmer</span>
                     <span class="category-tag web-category">web</span>
                     <span class="category-tag design-category">Design</span>
+                       <span class="category-tag programmer-category">Programmer</span>
                     </div>
                     <h2 class="project-title">Shinkou Electric Co., Ltd.</h2>
                     <p class="project-client">Corporate Website</p>
@@ -268,65 +186,6 @@ const t = useTranslations(lang);
                     <a href="https://shinkou-kohata.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
                 </div>
             </div>
-            </div>
-        </section>
-
-
-
-        <!-- UI/UX Design Tab -->
-        <section id="uiux" class="tab-content">
-            <div class="works-container">
-
-                <!-- Shinkou Electric Co., Ltd. 2026 -->
-            <div class="project-card">
-                <div class="project-visual">
-                    <img src="/images/shinkou-top.png" alt="Shinkou Electric Co., Ltd." class="project-image">
-                </div>
-                <div class="project-details">
-                    <div class="category">
-                    <span class="category-tag programmer-category">Programmer</span>
-                    <span class="category-tag web-category">web</span>
-                    <span class="category-tag design-category">Design</span>
-                    </div>
-                    <h2 class="project-title">Shinkou Electric Co., Ltd.</h2>
-                    <p class="project-client">Corporate Website</p>
-                    <div class="technologies">
-                        <span class="tech-label">Skills:</span>
-                        <span class="tech-tag">Word Press</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">Sass</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">Java Script</span>
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe Illustrator</span>
-                    </div>
-                    <a href="https://shinkou-kohata.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                </div>
-            </div>
-
-                <!-- Personal Color Diagnosis Site Project -->
-                <div class="project-card">
-                    <div class="project-visual">
-                        <img src="/images/personal colour-woks.png" alt="Personal Color Diagnosis Site" class="project-image">
-                    </div>
-                    <div class="project-details">
-                        <div class="category">
-                            <span class="category-tag uiux-category">UI/UX</span>
-                            <span class="category-tag design-category">Design</span>
-                        </div>
-                        <h2 class="project-title">Personal Color Diagnosis Site</h2>
-                        <p class="project-client">Personal Development</p>
-                        <div class="technologies">
-                            <span class="tech-label">Skills:</span>
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">face-api</span>
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">Adobe Illustrator</span>
-                        </div>
-                        <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
-                        <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
-                    </div>
-                </div>
 
                 <!-- BLUE CANVAS.inc Project -->
                 <div class="project-card">
@@ -403,6 +262,7 @@ const t = useTranslations(lang);
                         <div class="category">
                             <span class="category-tag web-category">WEB</span>
                             <span class="category-tag design-category">Design</span>
+                                                <span class="category-tag programmer-category">Programmer</span>
                         </div>
                         <h2 class="project-title">Iyara Relaxation Salon</h2>
                         <p class="project-client">Corporate Website</p>
@@ -445,38 +305,158 @@ const t = useTranslations(lang);
 
 
 
-        <!-- Graphic Design Tab -->
-        <section id="graphic" class="tab-content">
+        <!-- UI/UX Design Tab -->
+        <section id="uiux" class="tab-content">
             <div class="works-container">
-                <!-- Tokyo Game Show 2025 -->
+
+                <!-- Personal Color Diagnosis Site Project -->
                 <div class="project-card">
                     <div class="project-visual">
-                        <img src="/images/Tokyo game show 2025.png" alt="Tokyo Game Show 2025" class="project-image">
+                        <img src="/images/personal colour-woks.png" alt="Personal Color Diagnosis Site" class="project-image">
                     </div>
                     <div class="project-details">
                         <div class="category">
-                            <span class="category-tag graphic-category">Graphic</span>
-                            <span class="category-tag poster-category">Poster</span>
+                            <span class="category-tag uiux-category">UI/UX</span>
+                            <span class="category-tag design-category">Design</span>
                         </div>
-                        <h2 class="project-title">Tokyo Game Show 2025 Michishirube</h2>
-                        <p class="project-client">Game Poster Design</p>
+                        <h2 class="project-title">Personal Color Diagnosis Site</h2>
+                        <p class="project-client">Personal Development</p>
                         <div class="technologies">
                             <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">face-api</span>
+                            <span class="tech-tag">Figma</span>
                             <span class="tech-tag">Adobe Illustrator</span>
-                            <span class="tech-tag">Adobe Photoshop</span>
                         </div>
-                        <a href="https://x.com/theoriacode/status/1970875317746369002?s=46&t=czhe1ls4r4vSS358wJK3cA" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <a href="https://personal-color-tau.vercel.app/" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                        <a href="https://www.figma.com/design/GVIVCLyxOYLSE5rogsPD5v/%E3%83%91%E3%83%BC%E3%82%BD%E3%83%8A%E3%83%AB%E3%82%AB%E3%83%A9%E3%83%BC%E8%A8%BA%E6%96%AD%E3%80%80UI?node-id=20-3&t=VXTdpxpY3X07dLac-1" target="_blank" rel="noopener noreferrer" class="view-project">Design View</a>
+                    </div>
+                </div>
+        </section>
+
+
+
+        <!-- Programmer Tab -->
+        <section id="programmer" class="tab-content">
+            <div class="works-container">
+                <!-- Shinkou Electric Co., Ltd. 2026 -->
+            <div class="project-card">
+                <div class="project-visual">
+                    <img src="/images/shinkou-top.png" alt="Shinkou Electric Co., Ltd." class="project-image">
+                </div>
+                <div class="project-details">
+                    <div class="category">
+                    <span class="category-tag programmer-category">Programmer</span>
+                    <span class="category-tag web-category">web</span>
+                    <span class="category-tag design-category">Design</span>
+                    </div>
+                    <h2 class="project-title">Shinkou Electric Co., Ltd.</h2>
+                    <p class="project-client">Corporate Website</p>
+                    <div class="technologies">
+                        <span class="tech-label">Skills:</span>
+                        <span class="tech-tag">Word Press</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Sass</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Java Script</span>
+                        <span class="tech-tag">Figma</span>
+                        <span class="tech-tag">Adobe Illustrator</span>
+                    </div>
+                    <a href="https://shinkou-kohata.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                </div>
+            </div>
+
+                            <!-- Iyara Relaxation Salon Project -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <img src="/images/aiyara-works.png" alt="Iyara Relaxation Salon" class="project-image">
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                                                <span class="category-tag programmer-category">Programmer</span>
+                            <span class="category-tag web-category">WEB</span>
+                            <span class="category-tag design-category">Design</span>
+                        </div>
+                        <h2 class="project-title">Iyara Relaxation Salon</h2>
+                        <p class="project-client">Corporate Website</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">WordPress</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">Adobe XD</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                        </div>
+                        <a href="https://iyara2980.com" target="_blank" rel="noopener noreferrer" class="view-project">VIEW MORE</a>
+                    </div>
+                </div>
+        </div>
+        </section>
+
+
+
+        <!-- Video Production Tab -->
+        <section id="video" class="tab-content">
+            <div class="works-container">
+
+                <!-- Adtack.co.ltd -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/NVAMok4-b8A?si=a7mTf_NOBNcLzqh2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag video-category">Video</span>
+                        </div>
+                        <h2 class="project-title">Adtack.co.Ltd</h2>
+                        <p class="project-client">Company Promoton Video</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Premiere Pro</span>
+                            <span class="tech-tag">Adobe After Effects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wedding video2 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/4xOzcSqXLN0?si=WcqN_3zxKyBpB074" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag video-category">Video</span>
+                        </div>
+                        <h2 class="project-title">Wedding Video</h2>
+                        <p class="project-client">Video Production</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Premiere Pro</span>
+                            <span class="tech-tag">Adobe After Effects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wedding Video  3 -->
+                <div class="project-card">
+                    <div class="project-visual">
+                        <iframe class="project-video" src="https://www.youtube.com/embed/VnxGeyPwtH0?si=DVv906O8LHlx-qWK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-details">
+                        <div class="category">
+                            <span class="category-tag video-category">Video</span>
+                        </div>
+                        <h2 class="project-title">
+Hide & Nagisa Wedding Video</h2>
+                        <p class="project-client">Video Production</p>
+                        <div class="technologies">
+                            <span class="tech-label">Skills:</span>
+                            <span class="tech-tag">Adobe Premiere Pro</span>
+                            <span class="tech-tag">Adobe After Effects</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-
-            <!-- Video Production Tab -->
-        <!-- <section id="video-p" class="tab-content">
-            <div class="works-container">
-            </div>
-        </section> -->
     </main>
     
     <SocialIcons2 />
@@ -632,6 +612,22 @@ body {
     height: 400px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.project-image.small-contain {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.project-video {
+    width: 560px;
+    height: 315px;
+    border-radius: 10px;
+    border: none;
 }
 
 .device-mockup {
@@ -840,6 +836,12 @@ body {
     background: linear-gradient(135deg, #bef264 0%, #a3e635 100%);
     color: white;
     box-shadow: 0 2px 8px rgba(132, 204, 22, 0.3);
+}
+
+.video-category {
+    background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
 }
 
 .corporate-category {
