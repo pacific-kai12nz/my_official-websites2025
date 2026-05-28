@@ -4,7 +4,23 @@ import { getLangFromUrl, languages } from '../i18n/ui';
 const currentLang = getLangFromUrl(Astro.url);
 const currentPath = Astro.url.pathname;
 const otherLangs = Object.entries(languages).filter(([lang]) => lang !== currentLang);
+
+// Generate alternate language URLs for prefetching
+const altLangUrls = otherLangs.map(([lang]) => {
+  if (currentLang === 'ja' && lang === 'en') {
+    return `/en${currentPath}`;
+  } else if (currentLang === 'en' && lang === 'ja') {
+    return currentPath.replace(/^\/en/, '') || '/';
+  }
+  return currentPath;
+});
 ---
+
+<!-- Prefetch alternate language pages for faster loading -->
+{altLangUrls.map((url) => (
+  <link rel="prefetch" href={url} />
+))}
+
 <div class="lang-dropdown-fixed" tabindex="0">
   <button class="lang-main-btn">{languages[currentLang]}</button>
   <div class="lang-dropdown-list">
@@ -19,11 +35,38 @@ const otherLangs = Object.entries(languages).filter(([lang]) => lang !== current
         href = currentPath.replace(/^\/en/, '') || '/';
       }
       return (
-        <a href={href} class="lang-dropdown-item" hreflang={lang}>{label}</a>
+        <a href={href} class="lang-dropdown-item" hreflang={lang} data-lang={lang}>{label}</a>
       );
     })}
   </div>
 </div>
+
+<script is:inline>
+  // Save language preference to localStorage when switching
+  document.addEventListener('DOMContentLoaded', function() {
+    const langLinks = document.querySelectorAll('.lang-dropdown-item');
+    langLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        localStorage.setItem('preferredLanguage', lang);
+      });
+    });
+
+    // Check if user has a saved language preference on page load
+    const savedLang = localStorage.getItem('preferredLanguage');
+    const currentPath = window.location.pathname;
+    const isEnglish = currentPath.startsWith('/en');
+
+    // Auto-redirect if preference doesn't match current page
+    if (savedLang) {
+      if (savedLang === 'en' && !isEnglish) {
+        window.location.href = '/en' + currentPath;
+      } else if (savedLang === 'ja' && isEnglish) {
+        window.location.href = currentPath.replace(/^\/en/, '') || '/';
+      }
+    }
+  });
+</script>
 
 <style>
 .lang-dropdown-fixed {
