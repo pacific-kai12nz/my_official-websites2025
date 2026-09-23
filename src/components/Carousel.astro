@@ -1,6 +1,6 @@
 ---
 import ReactCarousel from "../components/ReactCarousel.jsx";
-// import Topicks from "../pages/ja/topicks.astro";
+const { lang = 'ja' } = Astro.props;
 ---
 
-<ReactCarousel client:only="react" />
+<ReactCarousel lang={lang} client:only="react" />

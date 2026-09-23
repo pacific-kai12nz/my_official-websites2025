@@ -36,10 +36,10 @@ const t = useTranslations(lang);
 			<section class="topicks">
 			  <h1>{t('site.pick_up')}</h1>
 			  <div class="carousel-container">
-				<Carousel />
+				<Carousel lang={lang} />
       </div>
       <div class="mobile-carousel-container">
-      <MobileCarousel />
+      <MobileCarousel lang={lang} />
       </div>
       <SocialIcons />
       <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />

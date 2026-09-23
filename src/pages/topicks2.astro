@@ -2,15 +2,13 @@
 import "../styles/global.css";
 import Header from "../layouts/Header.astro";
 import Footer from "../layouts/Footer.astro";
-import SocialIcons from "../components/SocialIcons.astro";
 import SocialIcons2 from "../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/ui';
 import LanguageToggle from "../components/LanguageToggle.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <!doctype html>
@@ -18,174 +16,376 @@ const t = useTranslations(lang);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PICK UP TOPICKS</title>
+    <title>PRICE LIST | KAI NAKAMURA</title>
   </head>
 
   <body>
     <Header />
     <LanguageToggle />
-    <main>
-      <section id="title">
-        <h1 class="page-title">PICK UP TOPICKS</h1>
+    <main class="main">
+
+      <section class="hero fade-up">
+        <h1 class="page-title">PRICE LIST</h1>
+        <p class="page-subtitle">料金表</p>
       </section>
 
-      <div class="container">
-        <div class="news-title"><em class="new-badge">NEW</em> 大切なお知らせ</div>
-        <div class="news-date">2025.04.20 NEWS</div>
-        <img class="feature-image" src="/images/comigsoon.jpg" alt="Feature Image" />
-        <div class="news-content">
-          <p>この度、UI/UXデザイナーとして独立しましたということをご報告させてください。正直めちゃくちゃ不安な決断はありましたが、これからはお客様の思いを形にするお手伝いをさせていただけたらと考えております。2025年から無理だろなこれ？って思うこと程、何を言われようが躊躇せず1つずつ確実に新しい事に挑戦していきたいと考えています。2025年はラスト1年なので後悔が残らないようにこれまで以上に真っ直ぐ未来を見据え、お世話になった方々に感謝の気持ちを忘れず、一歩ずつ、少しでも成長できるように努力を重ねていく所存です。2025年から新しい事を始めます。今後も新しいご報告がどんどんできるように試行錯誤しながら準備をしていますので、良い報告が出来たらなと考えています。国内だけでなく国外でも活躍出来るように新しいご報告ができる日まで、もう暫くお待ちください。お仕事のご依頼はInstagramのDMまたはお問い合わせまでご連絡ください。</p>
-          <br />
-          <p>
-            ■公式Instagram<br />
-            <a href="https://www.instagram.com/kaipora_12nz" class="animated-button">こちらまで</a>
-          </p>
+      <div class="pricing-wrapper">
+
+        <!-- グラフィック / ロゴ -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">🎨</span>
+            <h2>グラフィック / ロゴ</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">ロゴ制作（基本・2〜3案）</span><span class="item-price">¥30,000〜</span></li>
+            <li><span class="item-name">ロゴ制作（VI・レギュレーション込）</span><span class="item-price">¥80,000〜</span></li>
+            <li><span class="item-name">名刺・カードデザイン</span><span class="item-price">¥10,000〜</span></li>
+            <li><span class="item-name">チラシ / ポスター（片面）</span><span class="item-price">¥20,000〜</span></li>
+            <li><span class="item-name">バナー / SNS用画像（1点）</span><span class="item-price">¥5,000〜</span></li>
+          </ul>
+          <p class="note">※ ロゴには簡単なヒアリングと納品形式（AI / PNG / SVG）を含みます。商標登録は別途。</p>
         </div>
+
+        <!-- Web / UI・UX デザイン -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">💻</span>
+            <h2>Web / UI・UX デザイン</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">LP（ランディングページ・1枚）</span><span class="item-price">¥80,000〜</span></li>
+            <li><span class="item-name">コーポレート / ホームページ（5P程度）</span><span class="item-price">¥150,000〜</span></li>
+            <li class="has-example">
+              <span class="item-name">UI/UX デザイン（アプリ / Web・画面単位）</span><span class="item-price">¥8,000〜/画面</span>
+              <span class="example">例）ログイン画面 + ホーム画面 + マイページ + 設定画面 = 4画面 → ¥8,000 × 4 = ¥32,000〜</span>
+            </li>
+            <li><span class="item-name">ページ追加（1ページ）</span><span class="item-price">¥15,000〜</span></li>
+            <li><span class="item-name">コーディング（レスポンシブ対応）</span><span class="item-price">¥50,000〜</span></li>
+          </ul>
+          <p class="note">※ サイトは独自ドメイン取得・サーバー設定込みで対応可能（下記オプション参照）。</p>
+        </div>
+
+        <!-- Web・アプリ開発 -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">⚙️</span>
+            <h2>Web・アプリ開発（エンジニア）</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">Webサイト構築（ドメイン・サーバー設定込）</span><span class="item-price">¥120,000〜</span></li>
+            <li><span class="item-name">Webアプリ開発（小規模）</span><span class="item-price">¥250,000〜</span></li>
+            <li><span class="item-name">モバイルアプリ開発（リリースまで対応）</span><span class="item-price">¥400,000〜</span></li>
+            <li><span class="item-name">機能追加 / API連携</span><span class="item-price">¥40,000〜</span></li>
+            <li><span class="item-name">保守・運用（月額）</span><span class="item-price">¥15,000〜/月</span></li>
+          </ul>
+          <p class="note">※ アプリはストア申請・リリースまで対応。ドメイン・サーバー・ストア登録の実費は別途。</p>
+        </div>
+
+        <!-- 動画制作 / 編集 -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">🎬</span>
+            <h2>動画制作 / 編集</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">動画編集（〜3分・テロップ / BGM込）</span><span class="item-price">¥15,000〜</span></li>
+            <li><span class="item-name">動画編集（〜10分）</span><span class="item-price">¥30,000〜</span></li>
+            <li><span class="item-name">ショート動画（SNS・縦型 / 1本）</span><span class="item-price">¥8,000〜</span></li>
+            <li><span class="item-name">モーショングラフィックス / アニメ</span><span class="item-price">¥40,000〜</span></li>
+            <li><span class="item-name">撮影 + 編集（1日）</span><span class="item-price">¥60,000〜</span></li>
+          </ul>
+          <p class="note">※ 素材支給の場合の目安です。撮影・アニメーションは内容により変動します。</p>
+        </div>
+
+        <!-- 修正について -->
+        <div class="pricing-card revision-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">✏️</span>
+            <h2>修正について</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">修正 1〜3回目</span><span class="item-price free">無料</span></li>
+            <li><span class="item-name">修正 4回目</span><span class="item-price">¥5,000 / 回</span></li>
+            <li><span class="item-name">修正 5回目以降</span><span class="item-price">¥8,000 / 回</span></li>
+          </ul>
+          <p class="note">各案件、修正は3回まで無料です。4回目以降は追加料金をいただきます。</p>
+        </div>
+
+        <!-- オプション・お支払い -->
+        <div class="pricing-card option-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">📋</span>
+            <h2>オプション・お支払いについて</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">独自ドメイン取得代行 / サーバー初期設定</span><span class="item-price">¥10,000〜＋実費</span></li>
+            <li><span class="item-name">お支払い</span><span class="item-price">着手時50% / 納品時50%</span></li>
+          </ul>
+          <p class="note">ABN 登録済 / 請求書発行可</p>
+        </div>
+
       </div>
+
+      <div class="cta fade-up">
+        <p>お気軽にご相談ください</p>
+        <a href="/contact" class="cta-button">お問い合わせ</a>
+      </div>
+
     </main>
-        <SocialIcons2 />
-    <Footer />
+    <SocialIcons2 />
     <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+    <Footer />
   </body>
 </html>
 
-<style>
-
+<style is:global>
 body {
-    font-family: 'Oswald', sans-serif;
-    background: linear-gradient(#f5f0f6, #f9f5f7);
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  background: #ffffff;
+  color: #333;
+}
+</style>
+
+<style>
+.main {
+  padding-top: 110px;
+  padding-bottom: 80px;
+  min-height: 100vh;
 }
 
-main {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 40px 20px 20px;
 }
 
-.container {
-    max-width: 800px;
-    width: 100%;
-    padding: 40px;
+.page-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #222;
+  margin-bottom: 8px;
 }
 
-.news-title {
-    font-size: 24px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    margin-top: 40px;
+.page-subtitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  color: #888;
+  letter-spacing: 0.2em;
 }
 
-.new-badge {
-    background: linear-gradient(45deg, #ff4757, #ff3742);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 10px;
-    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    animation: pulse 2s infinite;
+/* Pricing Grid */
+.pricing-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 4px 16px rgba(255, 71, 87, 0.5);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    }
+.pricing-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-date {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 30px;
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
-img.feature-image {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.revision-card, .option-card {
+  grid-column: span 1;
 }
 
-.news-content {
-    line-height: 1.8;
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #ffe8d6;
 }
 
-.link-section a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.card-icon {
+  font-size: 24px;
 }
 
-.link-section a:hover {
-    text-decoration: underline;
+.card-header h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
 }
 
-.animated-button {
+/* Price List */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f0f6;
+  gap: 12px;
+  transition: background 0.2s ease;
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+}
+
+.price-list li:hover {
+  background: #fff9f0;
+  margin: 0 -8px;
+  padding: 10px 8px;
+  border-radius: 6px;
+}
+
+.item-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  color: #555;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.item-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff8c00, #ff4500, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.item-price.free {
+  background: linear-gradient(135deg, #4caf7d, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.has-example {
+  flex-wrap: wrap;
+}
+
+.example {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  color: #aaa;
+  background: #fff9f0;
+  border-left: 3px solid #ff8c00;
+  padding: 6px 10px;
+  margin-top: 6px;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.5;
+}
+
+.note {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px dashed #e8e0ee;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cta p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.cta-button {
   display: inline-block;
-  margin: 10px 0;
-  padding: 10px 20px;
-  color: #ffffff;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #c9a0dc, #a0c4dc);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 25px;
-  background: linear-gradient(to right, lightcoral, lightblue);
-  background-size: 200% auto;
-  transition: 0.5s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(160, 100, 200, 0.3);
 }
 
-.animated-button:hover {
-  background-position: right center;
-  transform: scale(1.05);
+.cta-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 28px rgba(160, 100, 200, 0.45);
 }
-
 
 .twitter-icon {
-    color: white;
-    display: none;
+  display: none;
 }
 
-/* ソーシャルアイコンの表示制御 */
-.social-icons-pc {
-    display: block;
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.social-icons-mobile {
-    display: none;
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* topicks2ページ専用のソーシャルアイコン色設定 */
-.social-icons-pc .social-icons a,
-.social-icons-mobile .social-icons a {
-    color: black !important;
-}
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .pricing-wrapper {
+    grid-template-columns: 1fr;
+  }
 
-@media screen and (max-width: 768px) {
-    .social-icons-pc {
-        display: none;
-    }
-    
-    .social-icons-mobile {
-        display: block;
-    }
-}
+  .page-title {
+    font-size: 34px;
+  }
 
+  .pricing-card {
+    padding: 20px;
+  }
+
+  .item-name {
+    font-size: 13px;
+  }
+}
 </style>
 
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+</script>

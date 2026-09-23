@@ -3,14 +3,13 @@ import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const works = [
-  { src: "/images/comigsoon.jpg", title: "WORK1", link: "" },
-  { src: "/images/comigsoon.jpg", title: "WORK2", link: "" },
-  { src: "/images/comigsoon.jpg", title: "WORK3", link: "" },
-  { src: "/images/comigsoon.jpg", title: "WORK4", link: "" },
-];
-
-const Carousel = () => {
+const Carousel = ({ lang = 'ja' }) => {
+  const works = [
+    { src: "/images/topicks1.png", title: "WORK1", link: "/topicks" },
+    { src: lang === 'en' ? "/images/create-banner-en.jpeg" : "/images/create-banner-jp.jpeg", title: "WORK2", link: lang === 'en' ? "/en/topicks2" : "/topicks2" },
+    { src: "/images/topicks3.png", title: "WORK3", link: lang === 'en' ? "/en/topicks3" : "/topicks3" },
+    { src: "/images/comigsoon.jpg", title: "WORK4", link: "" },
+  ];
   return (
     <div className="carousel-container">
       <Swiper

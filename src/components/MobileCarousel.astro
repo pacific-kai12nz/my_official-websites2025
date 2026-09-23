@@ -1,9 +1,7 @@
 ---
-import { Image } from 'astro:assets'
-import slide01 from '/public/images/comigsoon.jpg'
-import slide02 from '/public/images/comigsoon.jpg'
-import slide03 from '/public/images/comigsoon.jpg'
-import slide04 from '/public/images/comigsoon.jpg'
+const { lang = 'ja' } = Astro.props;
+const work2Src = lang === 'en' ? '/images/create-banner-en.jpeg' : '/images/create-banner-jp.jpeg';
+const work2Link = lang === 'en' ? '/en/topicks2' : '/topicks2';
 ---
 
 <div class="swiper">
@@ -11,26 +9,26 @@ import slide04 from '/public/images/comigsoon.jpg'
     <!-- Slideにリンクを追加 -->
     <div class="swiper-slide">
       <a href="/topicks">
-        <Image src={slide01} alt="Slide 1" />
+        <img src="/images/topicks1.png" alt="Slide 1" />
       </a>
     </div>
     <div class="swiper-slide">
-      <a href="/works/work2">
-        <Image src={slide02} alt="Slide 2" />
+      <a href={work2Link}>
+        <img src={work2Src} alt="Slide 2" />
       </a>
     </div>
     <div class="swiper-slide">
-      <a href="/works/work3">
-        <Image src={slide03} alt="Slide 3" />
+      <a href={lang === 'en' ? '/en/topicks3' : '/topicks3'}>
+        <img src="/images/topicks3.png" alt="Slide 3" />
       </a>
     </div>
     <div class="swiper-slide">
       <a href="/works/work4">
-        <Image src={slide04} alt="Slide 4" />
+        <img src="/images/comigsoon.jpg" alt="Slide 4" />
       </a>
     </div>
   </div>
-  
+
   <div class="swiper-pagination"></div>
   <div class="swiper-scrollbar"></div>
 </div>

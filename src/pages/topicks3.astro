@@ -2,15 +2,10 @@
 import "../styles/global.css";
 import Header from "../layouts/Header.astro";
 import Footer from "../layouts/Footer.astro";
-import SocialIcons from "../components/SocialIcons.astro";
-import SocialIcons2 from "../components/SocialIcons2.astro";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { getLangFromUrl, useTranslations } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/ui';
 import LanguageToggle from "../components/LanguageToggle.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <!doctype html>
@@ -18,176 +13,258 @@ const t = useTranslations(lang);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PICK UP TOPICKS</title>
+    <title>PODCAST | KAI NAKAMURA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <Header />
     <LanguageToggle />
-    <main>
-      <section id="title">
-        <h1 class="page-title">PICK UP TOPICKS</h1>
-      </section>
 
-      <div class="container">
-        <div class="news-title"><em class="new-badge">NEW</em>
-             ゼロクリとWondastonを立ち上げました！</div>
-        <div class="news-date">2025.06.30 NEWS</div>
-        <img class="feature-image" src="/images/comigsoon.jpg" alt="Feature Image" />
-        <div class="news-content">
-          <p>
-            この度、ZERO CREATION(ゼロクリ)というコミュニティを立ち上げて、Wondastonというフリーランスチームを結成しました。<br />
-            「やってみたい」を、諦めないで。ゼロからでも、クリエイターになれる。はじめの一歩を、ゼロクリで。<br />
-            【現在の部門】<br />
-            エンジニア<br />
-            デザイナー<br />
-            動画クリエイター<br />
-            フォトグラファー<br />  
-            その他クリエイティブがあります！<br />
-            なんだって挑戦していい。未経験から始めた仲間もたくさん！夢は目標をかなえる力だ。やりたいをかなえる！ゼロクリは、「夢をカタチにしたい人」のためのコミュニティサークルです。カタチにできるようにサポートもします！<br /> 
-            国内だけでなく世界中のクリエイター仲間とつながれる！横のつながりが広げる事ができる！<br />
-            場所は提供します！あとはどう活かすかは自分次第！本気でなりたい人！やる気ある人！待ってます！メンバーは随時募集中です！<br />
-          </p>
-          <br />
-          <p>
-            ■公式Instagram<br />
-            <a href="https://www.instagram.com/01zero.creation" class="animated-button">こちらまで</a>
-          </p>
-          <p>
-            ■公式 X<br />
-            <a href="https://x.com/01_zerocreation" class="animated-button">こちらまで</a>
-          </p>
-        </div>
+    <div class="page">
+
+      <!-- Hero Image -->
+      <div class="hero fade-up">
+        <img src="/images/podcast-lp.png" alt="KAI NAKAMURA Podcast" class="hero-img" />
       </div>
-    </main>
-        <SocialIcons2 />
+
+      <!-- Title -->
+      <div class="title-section fade-up">
+        <h1 class="title">PODCAST &amp; VIDEO CAST</h1>
+        <p class="subtitle">KAI NAKAMURA</p>
+      </div>
+
+      <!-- Description -->
+      <div class="desc fade-up">
+        <p>音声・映像で届けるKAI NAKAMURAのコンテンツ。<br>各プラットフォームでお聴きください。</p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-group">
+
+        <!-- Spotify -->
+        <a href="#" class="btn btn-spotify fade-up">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.518 17.326a.748.748 0 0 1-1.03.25c-2.819-1.723-6.365-2.112-10.54-1.157a.748.748 0 0 1-.333-1.459c4.571-1.045 8.492-.595 11.653 1.337a.748.748 0 0 1 .25 1.029zm1.472-3.273a.936.936 0 0 1-1.288.308c-3.226-1.983-8.144-2.558-11.956-1.399a.936.936 0 0 1-.516-1.797c4.361-1.325 9.784-.683 13.452 1.599a.935.935 0 0 1 .308 1.289zm.126-3.407C15.408 8.295 9.375 8.1 5.691 9.222a1.122 1.122 0 1 1-.651-2.148c4.256-1.291 11.33-1.041 15.806 1.619a1.122 1.122 0 1 1-1.73 1.953z"/>
+          </svg>
+          Spotify で聴く
+        </a>
+
+        <!-- Apple Podcast -->
+        <a href="#" class="btn btn-apple fade-up">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.003 0C5.374 0 0 5.374 0 12.003c0 6.628 5.374 12.002 12.003 12.002C18.63 24.005 24 18.63 24 12.003 24 5.374 18.63 0 12.003 0zM12 1.997c5.52 0 10.004 4.484 10.004 10.003 0 5.52-4.484 10.003-10.004 10.003C6.48 22.003 2 17.52 2 12 2 6.48 6.48 1.997 12 1.997zm.003 2.005a8 8 0 0 0-3.056 15.396c-.014-.3-.024-.823.057-1.178l.84-3.563s-.214-.43-.214-1.065c0-.998.579-1.744 1.3-1.744.612 0 .909.46.909 1.01 0 .616-.393 1.537-.596 2.39-.17.714.358 1.295 1.06 1.295 1.272 0 2.252-1.34 2.252-3.277 0-1.714-1.233-2.912-2.993-2.912-2.039 0-3.234 1.529-3.234 3.108 0 .615.236 1.274.532 1.634a.214.214 0 0 1 .049.204l-.198.811c-.032.131-.106.16-.243.097-1-.467-1.625-1.935-1.625-3.114 0-2.532 1.84-4.858 5.305-4.858 2.785 0 4.952 1.985 4.952 4.636 0 2.766-1.744 4.99-4.163 4.99-.813 0-1.578-.423-1.84-.922l-.5 1.87c-.18.694-.668 1.564-1.001 2.094.754.233 1.554.358 2.383.358a8 8 0 0 0 0-16z"/>
+          </svg>
+          Apple Podcast で聴く
+        </a>
+
+        <!-- Video Cast (YouTube) -->
+        <a href="https://www.youtube.com/@KAINAKAMURAcast-official" target="_blank" rel="noopener noreferrer" class="btn btn-youtube fade-up">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          Video Cast を観る
+        </a>
+
+        <!-- YouTube Main -->
+        <!-- <a href="https://www.youtube.com/@kainakamura-official" target="_blank" rel="noopener noreferrer" class="btn btn-youtube-sub fade-up">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          YouTube チャンネルを見る
+        </a> -->
+
+      </div>
+
+      <a href="/" class="back-link fade-up">← KAI NAKAMURA OFFICIAL</a>
+
+    </div>
+
     <Footer />
-    <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
   </body>
 </html>
 
-<style>
-
-body {
-    font-family: 'Oswald', sans-serif;
-    background: linear-gradient(#f5f0f6, #f9f5f7);
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+<style is:global>
+html, body {
+  background: #0a0a0a;
+  margin: 0;
+  padding: 0;
 }
-
-main {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container {
-    max-width: 800px;
-    width: 100%;
-    padding: 40px;
-}
-
-.news-title {
-    font-size: 24px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    margin-top: 40px;
-}
-
-.new-badge {
-    background: linear-gradient(45deg, #ff4757, #ff3742);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 10px;
-    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 4px 16px rgba(255, 71, 87, 0.5);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    }
-}
-
-.news-date {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 30px;
-}
-
-img.feature-image {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.news-content {
-    line-height: 1.8;
-}
-
-.link-section a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.link-section a:hover {
-    text-decoration: underline;
-}
-
-.animated-button {
-  display: inline-block;
-  margin: 10px 0;
-  padding: 10px 20px;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 25px;
-  background: linear-gradient(to right, lightcoral, lightblue);
-  background-size: 200% auto;
-  transition: 0.5s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.animated-button:hover {
-  background-position: right center;
-  transform: scale(1.05);
-}
-
-
-.twitter-icon {
-    color: white;
-    display: none;
-}
-
-
-@media screen and (max-width: 768px) {
-    .social-icons-pc {
-        display: none;
-    }
-    
-    .social-icons-mobile {
-        display: block;
-    }
-}
-
 </style>
+
+<style>
+.page {
+  padding-top: 90px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  width: 100%;
+  max-width: 480px;
+  padding: 30px 24px 0;
+}
+
+.hero-img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+
+/* Title */
+.title-section {
+  text-align: center;
+  margin-top: 28px;
+  padding: 0 24px;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  color: #888;
+  margin: 0;
+}
+
+/* Description */
+.desc {
+  text-align: center;
+  padding: 18px 28px 4px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.8;
+  max-width: 440px;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 400px;
+  padding: 24px 24px 8px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 24px;
+  border-radius: 50px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+  opacity: 0.92;
+}
+
+.btn-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+/* Spotify */
+.btn-spotify {
+  background: #1db954;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(29, 185, 84, 0.35);
+}
+
+/* Apple Podcast */
+.btn-apple {
+  background: linear-gradient(135deg, #d02bf9, #8e23e0);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(142, 35, 224, 0.35);
+}
+
+/* Video Cast YouTube */
+.btn-youtube {
+  background: #ff0000;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.35);
+}
+
+/* YouTube Sub */
+.btn-youtube-sub {
+  background: #222;
+  color: #fff;
+  border: 1px solid #444;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+
+/* Back link */
+.back-link {
+  margin-top: 36px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+/* Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 480px) {
+  .page {
+    padding-top: 70px;
+  }
+  .title {
+    font-size: 22px;
+  }
+}
+</style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+</script>

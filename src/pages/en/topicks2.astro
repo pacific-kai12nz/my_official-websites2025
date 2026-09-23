@@ -2,15 +2,13 @@
 import "../../styles/global.css";
 import Header from "../../layouts/Header.astro";
 import Footer from "../../layouts/Footer.astro";
-import SocialIcons from "../../components/SocialIcons.astro";
 import SocialIcons2 from "../../components/SocialIcons2.astro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { getLangFromUrl, useTranslations } from '../../i18n/ui';
+import { getLangFromUrl } from '../../i18n/ui';
 import LanguageToggle from "../../components/LanguageToggle.astro";
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <!doctype html>
@@ -18,174 +16,372 @@ const t = useTranslations(lang);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PICK UP TOPICS</title>
+    <title>PRICE LIST | KAI NAKAMURA</title>
   </head>
 
   <body>
     <Header />
     <LanguageToggle />
-    <main>
-      <section id="title">
-        <h1 class="page-title">PICK UP TOPICS</h1>
+    <main class="main">
+
+      <section class="hero fade-up">
+        <h1 class="page-title">PRICE LIST</h1>
+        <p class="page-subtitle">Services & Pricing</p>
       </section>
 
-      <div class="container">
-        <div class="news-title"><em class="new-badge">NEW</em> Important Announcement</div>
-        <div class="news-date">2025.04.20 NEWS</div>
-        <img class="feature-image" src="/images/comigsoon.jpg" alt="Feature Image" />
-        <div class="news-content">
-          <p>I would like to announce that I have officially started working independently as a UI/UX designer. Honestly, it was a very difficult and uncertain decision, but I am committed to helping clients bring their visions to life. Starting in 2025, I will challenge myself with new things one step at a time, even when they seem impossible. As this is the final year of my 20s, I want to face the future with no regrets, remain grateful to everyone who has supported me, and continue to work hard and grow. I am preparing for many new projects and hope to share more exciting updates with you soon. I aim to expand my activities not only in Japan but also globally. Please stay tuned for future announcements. For work inquiries, feel free to contact me via Instagram DM or through the contact form.</p>
-          <br />
-          <p>
-            ■ Official Instagram<br />
-            <a href="https://www.instagram.com/kaipora_12nz" class="animated-button">Click here</a>
-          </p>
+      <div class="pricing-wrapper">
+
+        <!-- Graphic / Logo -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">🎨</span>
+            <h2>Graphic / Logo</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">Logo Design (Basic, 2–3 concepts)</span><span class="item-price">$300~</span></li>
+            <li><span class="item-name">Logo Design (VI & Brand Guidelines included)</span><span class="item-price">$800~</span></li>
+            <li><span class="item-name">Business Card Design</span><span class="item-price">$100~</span></li>
+            <li><span class="item-name">Flyer / Poster (single-sided)</span><span class="item-price">$200~</span></li>
+            <li><span class="item-name">Banner / SNS Image (1 piece)</span><span class="item-price">$50~</span></li>
+          </ul>
+          <p class="note">* Logo includes a brief consultation and delivery in AI / PNG / SVG formats. Trademark registration is separate.</p>
         </div>
+
+        <!-- Web / UI·UX Design -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">💻</span>
+            <h2>Web / UI·UX Design</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">Landing Page (single page)</span><span class="item-price">$800~</span></li>
+            <li><span class="item-name">Corporate / Homepage (approx. 5 pages)</span><span class="item-price">$1,500~</span></li>
+            <li class="has-example">
+              <span class="item-name">UI/UX Design (app / web, per screen)</span><span class="item-price">$80~/screen</span>
+              <span class="example">e.g. Login + Home + My Page + Settings = 4 screens → $80 × 4 = $320~</span>
+            </li>
+            <li><span class="item-name">Additional Page (per page)</span><span class="item-price">$150~</span></li>
+            <li><span class="item-name">Coding (responsive design)</span><span class="item-price">$500~</span></li>
+          </ul>
+          <p class="note">* Domain registration and server setup can be included (see Options below).</p>
+        </div>
+
+        <!-- Web / App Development -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">⚙️</span>
+            <h2>Web / App Development</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">Website Build (domain & server setup included)</span><span class="item-price">$1,200~</span></li>
+            <li><span class="item-name">Web App Development (small scale)</span><span class="item-price">$2,500~</span></li>
+            <li><span class="item-name">Mobile App Development (up to release)</span><span class="item-price">$4,000~</span></li>
+            <li><span class="item-name">Feature Add-on / API Integration</span><span class="item-price">$400~</span></li>
+            <li><span class="item-name">Maintenance & Operation (monthly)</span><span class="item-price">$150~/mo</span></li>
+          </ul>
+          <p class="note">* App development includes store submission and release. Domain, server, and store registration fees are separate.</p>
+        </div>
+
+        <!-- Video Production / Editing -->
+        <div class="pricing-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">🎬</span>
+            <h2>Video Production / Editing</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">Video Editing (up to 3 min, captions & BGM)</span><span class="item-price">$150~</span></li>
+            <li><span class="item-name">Video Editing (up to 10 min)</span><span class="item-price">$300~</span></li>
+            <li><span class="item-name">Short Video (SNS vertical, 1 clip)</span><span class="item-price">$80~</span></li>
+            <li><span class="item-name">Motion Graphics / Animation</span><span class="item-price">$400~</span></li>
+            <li><span class="item-name">Filming + Editing (1 day)</span><span class="item-price">$600~</span></li>
+          </ul>
+          <p class="note">* Prices are estimates when footage is provided. Filming and animation pricing varies by project.</p>
+        </div>
+
+        <!-- Revisions -->
+        <div class="pricing-card revision-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">✏️</span>
+            <h2>Revisions</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">Revisions 1–3</span><span class="item-price free">Free</span></li>
+            <li><span class="item-name">4th Revision</span><span class="item-price">$50 / time</span></li>
+            <li><span class="item-name">5th Revision and beyond</span><span class="item-price">$80 / time</span></li>
+          </ul>
+          <p class="note">Up to 3 revisions are included free of charge. Additional revisions will be billed accordingly.</p>
+        </div>
+
+        <!-- Options & Payment -->
+        <div class="pricing-card option-card fade-up">
+          <div class="card-header">
+            <span class="card-icon">📋</span>
+            <h2>Options & Payment</h2>
+          </div>
+          <ul class="price-list">
+            <li><span class="item-name">Domain Registration / Server Setup</span><span class="item-price">$100~ + actual cost</span></li>
+            <li><span class="item-name">Payment Terms</span><span class="item-price">50% upfront / 50% on delivery</span></li>
+          </ul>
+          <p class="note">ABN registered / Invoices available</p>
+        </div>
+
       </div>
+
+      <div class="cta fade-up">
+        <p>Feel free to reach out</p>
+        <a href="/en/contact" class="cta-button">Contact Me</a>
+      </div>
+
     </main>
-        <SocialIcons2 />
-        <Footer />
+    <SocialIcons2 />
     <FontAwesomeIcon icon={faTwitter} size="2x" className="twitter-icon" client:load />
+    <Footer />
   </body>
 </html>
 
-<style>
-
+<style is:global>
 body {
-    font-family: 'Oswald', sans-serif;
-    background: linear-gradient(#f5f0f6, #f9f5f7);
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  background: #ffffff;
+  color: #333;
+}
+</style>
+
+<style>
+.main {
+  padding-top: 110px;
+  padding-bottom: 80px;
+  min-height: 100vh;
 }
 
-main {
-    flex: 1;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 40px 20px 20px;
 }
 
-.container {
-    max-width: 800px;
-    width: 100%;
-    padding: 40px;
+.page-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #222;
+  margin-bottom: 8px;
 }
 
-.news-title {
-    font-size: 24px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    margin-top: 40px;
+.page-subtitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  color: #888;
+  letter-spacing: 0.2em;
 }
 
-.new-badge {
-    background: linear-gradient(45deg, #ff4757, #ff3742);
-    color: white;
-    padding: 4px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: 10px;
-    box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    animation: pulse 2s infinite;
+/* Pricing Grid */
+.pricing-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 4px 16px rgba(255, 71, 87, 0.5);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(255, 71, 87, 0.3);
-    }
+.pricing-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.news-date {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 30px;
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
-img.feature-image {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #ffe8d6;
 }
 
-.news-content {
-    line-height: 1.8;
+.card-icon {
+  font-size: 24px;
 }
 
-.link-section a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.card-header h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
 }
 
-.link-section a:hover {
-    text-decoration: underline;
+/* Price List */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
 }
 
-.animated-button {
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f0f6;
+  gap: 12px;
+  transition: background 0.2s ease;
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+}
+
+.price-list li:hover {
+  background: #fff9f0;
+  margin: 0 -8px;
+  padding: 10px 8px;
+  border-radius: 6px;
+}
+
+.item-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  color: #555;
+  flex: 1;
+  line-height: 1.4;
+}
+
+.item-price {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff8c00, #ff4500, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+}
+
+.item-price.free {
+  background: linear-gradient(135deg, #4caf7d, #2ecc71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.has-example {
+  flex-wrap: wrap;
+}
+
+.example {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  color: #aaa;
+  background: #fff9f0;
+  border-left: 3px solid #ff8c00;
+  padding: 6px 10px;
+  margin-top: 6px;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.5;
+}
+
+.note {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px dashed #e8e0ee;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.cta p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.cta-button {
   display: inline-block;
-  margin: 10px 0;
-  padding: 10px 20px;
-  color: #ffffff;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #c9a0dc, #a0c4dc);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
   font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 25px;
-  background: linear-gradient(to right, lightcoral, lightblue);
-  background-size: 200% auto;
-  transition: 0.5s;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 50px;
+  letter-spacing: 0.1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(160, 100, 200, 0.3);
 }
 
-.animated-button:hover {
-  background-position: right center;
-  transform: scale(1.05);
+.cta-button:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 28px rgba(160, 100, 200, 0.45);
 }
-
 
 .twitter-icon {
-    color: white;
-    display: none;
+  display: none;
 }
 
-/* ソーシャルアイコンの表示制御 */
-.social-icons-pc {
-    display: block;
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.social-icons-mobile {
-    display: none;
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* topicks2ページ専用のソーシャルアイコン色設定 */
-.social-icons-pc .social-icons a,
-.social-icons-mobile .social-icons a {
-    color: black !important;
-}
+/* Mobile */
+@media screen and (max-width: 700px) {
+  .pricing-wrapper {
+    grid-template-columns: 1fr;
+  }
 
-@media screen and (max-width: 768px) {
-    .social-icons-pc {
-        display: none;
-    }
-    
-    .social-icons-mobile {
-        display: block;
-    }
-}
+  .page-title {
+    font-size: 34px;
+  }
 
+  .pricing-card {
+    padding: 20px;
+  }
+
+  .item-name {
+    font-size: 13px;
+  }
+}
 </style>
 
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+</script>
